@@ -4,7 +4,7 @@
  */
 package Interfaces;
 
-import DTO.ClienteDTO;
+import DTO.PersonaNuevaDTO;
 import Entidades.LicenciaEntidad;
 import Entidades.PlacaEntidad;
 import java.util.List;
@@ -15,8 +15,8 @@ import java.util.List;
  */
 public interface IConsultas {
     
-    List<LicenciaEntidad> buscarLicenciasPorCriterios(ClienteDTO cliente);
+    List<LicenciaEntidad> buscarLicenciasPorCriterios(PersonaNuevaDTO pacienteNuevoDTO);
     
-    List<PlacaEntidad> buscarPlacasPorCriterios(ClienteDTO cliente);
+    List<PlacaEntidad> buscarPlacasPorCriterios(PersonaNuevaDTO personaNuevoDTO);
     
 }

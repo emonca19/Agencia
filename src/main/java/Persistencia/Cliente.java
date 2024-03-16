@@ -4,7 +4,8 @@
  */
 package Persistencia;
 
-import DTO.ClienteDTO;
+import DTO.PersonaGeneradaDTO;
+import DTO.PersonaNuevaDTO;
 import Entidades.PersonaEntidad;
 import Interfaces.ICliente;
 import Interfaces.IConexionBD;
@@ -17,8 +18,8 @@ import javax.persistence.EntityManager;
  */
 public class Cliente implements ICliente{
 
-    private IConexionBD conexionBD;
-    private EntityManager entityManagaer;
+    private final IConexionBD conexionBD;
+    private final EntityManager entityManagaer;
     
     public Cliente() throws SQLException{
     
@@ -28,7 +29,7 @@ public class Cliente implements ICliente{
     }
     
     @Override
-    public ClienteDTO buscarPorId(Long id) {
+    public PersonaNuevaDTO buscarPorId(Long id) {
     
         return null;
         
