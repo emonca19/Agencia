@@ -19,16 +19,16 @@ public class VehiculoEntidad implements Serializable {
     @Column(name = "idVehiculo")
     private Long idVehiculo;
     
-    @Column(name = "color", nullable = false, length = 25)
+    @Column(name = "color", nullable = false, length = 20)
     private String color;
     
-    @Column(name = "linea", nullable = false, length = 25)
+    @Column(name = "linea", nullable = false, length = 40)
     private String linea;
     
-    @Column(name = "marca", nullable = false, length = 25)
+    @Column(name = "marca", nullable = false, length = 40)
     private String marca;
     
-    @Column(name = "modelo", nullable = false, length = 25)
+    @Column(name = "modelo", nullable = false, length = 4)
     private String modelo;
     
     @Column(name = "numSerie", nullable = false)
@@ -142,29 +142,47 @@ public class VehiculoEntidad implements Serializable {
         this.idVehiculo = idVehiculo;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idVehiculo != null ? idVehiculo.hashCode() : 0);
-        return hash;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (idVehiculo != null ? idVehiculo.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof VehiculoEntidad)) {
+//            return false;
+//        }
+//        VehiculoEntidad other = (VehiculoEntidad) object;
+//        if ((this.idVehiculo == null && other.idVehiculo!= null) || (this.idVehiculo != null && !this.idVehiculo.equals(other.idVehiculo))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof VehiculoEntidad)) {
-            return false;
-        }
-        VehiculoEntidad other = (VehiculoEntidad) object;
-        if ((this.idVehiculo == null && other.idVehiculo!= null) || (this.idVehiculo != null && !this.idVehiculo.equals(other.idVehiculo))) {
-            return false;
-        }
-        return true;
-    }
+    
+    
+//    @Override
+//    public String toString() {
+//        return "Entidad.VehiculoEntidad[ id=" + idVehiculo + " ]";
+//    }
 
     @Override
     public String toString() {
-        return "Entidad.VehiculoEntidad[ id=" + idVehiculo + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append("VehiculoEntidad{");
+        sb.append("idVehiculo=").append(idVehiculo);
+        sb.append(", color=").append(color);
+        sb.append(", linea=").append(linea);
+        sb.append(", marca=").append(marca);
+        sb.append(", modelo=").append(modelo);
+        sb.append(", numSerie=").append(numSerie);
+        sb.append(", placas=").append(placas);
+        sb.append(", vehiculoCliente=").append(vehiculoCliente);
+        sb.append('}');
+        return sb.toString();
     }
 
 }

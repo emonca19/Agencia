@@ -34,19 +34,19 @@ public class LicenciaEntidad implements Serializable {
     @JoinColumn(name = "idCliente")
     private PersonaEntidad cliente;
     
-    @OneToOne
-    @JoinColumn(name = "idTramite", referencedColumnName = "idTramite")
-    private TramiteEntidad tramite;
+//    @OneToOne
+//    @JoinColumn(name = "idTramite", referencedColumnName = "idTramite")
+//    private TramiteEntidad tramite;
 
    
 
     public LicenciaEntidad() {
     }
 
-    public LicenciaEntidad(String estado, PersonaEntidad cliente, TramiteEntidad tramite) {
+    public LicenciaEntidad(String estado, PersonaEntidad cliente) {
         this.estado = estado;
         this.cliente = cliente;
-        this.tramite = tramite;
+//        this.tramite = tramite;
     }
 
     public Long getId() {
@@ -57,13 +57,13 @@ public class LicenciaEntidad implements Serializable {
         this.id = id;
     }
 
-    public TramiteEntidad getTramite() {
-        return tramite;
-    }
-
-    public void setTramite(TramiteEntidad tramite) {
-        this.tramite = tramite;
-    }
+//    public TramiteEntidad getTramite() {
+//        return tramite;
+//    }
+//
+//    public void setTramite(TramiteEntidad tramite) {
+//        this.tramite = tramite;
+//    }
 
     public String getEstado() {
         return estado;
@@ -81,29 +81,40 @@ public class LicenciaEntidad implements Serializable {
         this.cliente = cliente;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof LicenciaEntidad)) {
-            return false;
-        }
-        LicenciaEntidad other = (LicenciaEntidad) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (id != null ? id.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof LicenciaEntidad)) {
+//            return false;
+//        }
+//        LicenciaEntidad other = (LicenciaEntidad) object;
+//        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {
-        return "Entidad.LicenciaEntidad[ id=" + id + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append("LicenciaEntidad{");
+        sb.append("id=").append(id);
+        sb.append(", estado=").append(estado);
+        sb.append(", vigencia=").append(vigencia);
+        sb.append(", costo=").append(costo);
+        sb.append(", cliente=").append(cliente);
+        sb.append('}');
+        return sb.toString();
     }
+
+    
+    
 
 }

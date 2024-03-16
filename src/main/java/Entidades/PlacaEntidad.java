@@ -1,6 +1,7 @@
 package Entidades;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,66 +27,60 @@ public class PlacaEntidad implements Serializable {
     @Column(name = "estado", nullable = false, length = 25)
     private String estado;
     
-    @Column (name = "precio", nullable = false)
-    private int precio;
-    
-    @Column(name = "costo", nullable = false)
+    @Column (name = "costo", nullable = false)
     private int costo;
     
-    @Column (name = "numAlfanumerico", nullable = false)
-    private int num_alfanumerico;
+    @Column (name = "numeroPlaca", nullable = false)
+    private int numeroPlaca;
     
     @Column (name = "fechaEmision", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date fecha_emision;
+    private Calendar fecha_emision;
     
     @Column (name = "fechaRecepcion", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date fecha_recepcion;
+    private Calendar fecha_recepcion;
     
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idVehiculo")
     private VehiculoEntidad vehiculo;
     
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "idCliente")
-    private PersonaEntidad cliente;
+//    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+//    @JoinColumn(name = "idCliente")
+//    private PersonaEntidad cliente;
     
-    @OneToOne
-    @JoinColumn(name = "idTramite", referencedColumnName = "idTramite")
-    private TramiteEntidad tramite;
+//    @OneToOne
+//    @JoinColumn(name = "idTramite", referencedColumnName = "idTramite")
+//    private TramiteEntidad tramite;
     
     
 
     public PlacaEntidad() {
     }
 
-    public PlacaEntidad(String estado, int precio, int num_alfanumerico, Date fecha_emision, Date fecha_recepcion, VehiculoEntidad vehiculo, PersonaEntidad cliente, TramiteEntidad tramite) {
+    public PlacaEntidad(String estado, int precio, int num_alfanumerico, Calendar fecha_emision, Calendar fecha_recepcion) {
         this.estado = estado;
-        this.precio = precio;
-        this.num_alfanumerico = num_alfanumerico;
+        this.costo = precio;
+        this.numeroPlaca = num_alfanumerico;
         this.fecha_emision = fecha_emision;
         this.fecha_recepcion = fecha_recepcion;
-        this.vehiculo = vehiculo;
-        this.cliente = cliente;
-        this.tramite = tramite;
     }
 
-    public TramiteEntidad getTramite() {
-        return tramite;
-    }
-
-    public void setTramite(TramiteEntidad tramite) {
-        this.tramite = tramite;
-    }
-
-    public PersonaEntidad getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(PersonaEntidad cliente) {
-        this.cliente = cliente;
-    }
+//    public TramiteEntidad getTramite() {
+//        return tramite;
+//    }
+//
+//    public void setTramite(TramiteEntidad tramite) {
+//        this.tramite = tramite;
+//    }
+//
+//    public PersonaEntidad getCliente() {
+//        return cliente;
+//    }
+//
+//    public void setCliente(PersonaEntidad cliente) {
+//        this.cliente = cliente;
+//    }
 
     public VehiculoEntidad getVehiculo() {
         return vehiculo;
@@ -105,34 +100,34 @@ public class PlacaEntidad implements Serializable {
     }
 
     public int getPrecio() {
-        return precio;
+        return costo;
     }
 
     public void setPrecio(int precio) {
-        this.precio = precio;
+        this.costo = precio;
     }
 
     public int getNum_alfanumerico() {
-        return num_alfanumerico;
+        return numeroPlaca;
     }
 
     public void setNum_alfanumerico(int num_alfanumerico) {
-        this.num_alfanumerico = num_alfanumerico;
+        this.numeroPlaca = num_alfanumerico;
     }
 
-    public Date getFecha_emision() {
+    public Calendar getFecha_emision() {
         return fecha_emision;
     }
 
-    public void setFecha_emision(Date fecha_emision) {
+    public void setFecha_emision(Calendar fecha_emision) {
         this.fecha_emision = fecha_emision;
     }
 
-    public Date getFecha_recepcion() {
+    public Calendar getFecha_recepcion() {
         return fecha_recepcion;
     }
 
-    public void setFecha_recepcion(Date fecha_recepcion) {
+    public void setFecha_recepcion(Calendar fecha_recepcion) {
         this.fecha_recepcion = fecha_recepcion;
     }
 
@@ -146,29 +141,43 @@ public class PlacaEntidad implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof PlacaEntidad)) {
-            return false;
-        }
-        PlacaEntidad other = (PlacaEntidad) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (id != null ? id.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof PlacaEntidad)) {
+//            return false;
+//        }
+//        PlacaEntidad other = (PlacaEntidad) object;
+//        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {
-        return "Entidad.PlacaEntidad[ id=" + id + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append("PlacaEntidad{");
+        sb.append("id=").append(id);
+        sb.append(", estado=").append(estado);
+        sb.append(", costo=").append(costo);
+        sb.append(", numeroPlaca=").append(numeroPlaca);
+        sb.append(", fecha_emision=").append(fecha_emision);
+        sb.append(", fecha_recepcion=").append(fecha_recepcion);
+        sb.append(", vehiculo=").append(vehiculo);
+//        sb.append(", cliente=").append(cliente);
+//        sb.append(", tramite=").append(tramite);
+        sb.append('}');
+        return sb.toString();
     }
+
+    
 
 }

@@ -30,10 +30,10 @@ public class VehiculoTieneCliente implements Serializable {
     public VehiculoTieneCliente() {
     }
 
-    public VehiculoTieneCliente(VehiculoEntidad vehiculo, PersonaEntidad cliente) {
-        this.vehiculo = vehiculo;
-        this.cliente = cliente;
-    }
+//    public VehiculoTieneCliente(VehiculoEntidad vehiculo, PersonaEntidad cliente) {
+//        this.vehiculo = vehiculo;
+//        this.cliente = cliente;
+//    }
 
     public VehiculoEntidad getVehiculo() {
         return vehiculo;
@@ -60,29 +60,37 @@ public class VehiculoTieneCliente implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof VehiculoTieneCliente)) {
-            return false;
-        }
-        VehiculoTieneCliente other = (VehiculoTieneCliente) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (id != null ? id.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof VehiculoTieneCliente)) {
+//            return false;
+//        }
+//        VehiculoTieneCliente other = (VehiculoTieneCliente) object;
+//        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {
-        return "Entidad.Vehiculo_tiene_cliente[ id=" + id + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append("VehiculoTieneCliente{");
+        sb.append("id=").append(id);
+        sb.append(", vehiculo=").append(vehiculo);
+        sb.append(", cliente=").append(cliente);
+        sb.append('}');
+        return sb.toString();
     }
+
+    
 
 }
