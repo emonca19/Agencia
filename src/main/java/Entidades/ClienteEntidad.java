@@ -63,8 +63,7 @@ public class ClienteEntidad implements Serializable {
     public ClienteEntidad() {
     }
 
-    public ClienteEntidad(Long idCliente, String curp, Date fechaNacimiento, String rfc, String telefono, String nombres, String apellido_paterno, String apellido_materno, List<TramiteEntidad> tramites, List<PlacaEntidad> placas, List<LicenciaEntidad> licencias, List<VehiculoTieneCliente> vehiculoCliente) {
-        this.idCliente = idCliente;
+    public ClienteEntidad(String curp, Date fechaNacimiento, String rfc, String telefono, String nombres, String apellido_paterno, String apellido_materno, List<TramiteEntidad> tramites, List<PlacaEntidad> placas, List<LicenciaEntidad> licencias, List<VehiculoTieneCliente> vehiculoCliente) {
         this.curp = curp;
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;

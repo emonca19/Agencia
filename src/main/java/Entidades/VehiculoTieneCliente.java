@@ -30,6 +30,11 @@ public class VehiculoTieneCliente implements Serializable {
     public VehiculoTieneCliente() {
     }
 
+    public VehiculoTieneCliente(VehiculoEntidad vehiculo, ClienteEntidad cliente) {
+        this.vehiculo = vehiculo;
+        this.cliente = cliente;
+    }
+
     public VehiculoEntidad getVehiculo() {
         return vehiculo;
     }

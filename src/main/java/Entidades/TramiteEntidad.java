@@ -27,8 +27,8 @@ public class TramiteEntidad implements Serializable {
     public TramiteEntidad() {
     }
 
-    public TramiteEntidad(Long id, ClienteEntidad cliente) {
-        this.id = id;
+    public TramiteEntidad(ClienteEntidad cliente) {
+        
         this.cliente = cliente;
     }
 

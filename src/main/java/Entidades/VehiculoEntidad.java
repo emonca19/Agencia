@@ -46,8 +46,7 @@ public class VehiculoEntidad implements Serializable {
     public VehiculoEntidad() {
     }
 
-    public VehiculoEntidad(Long idVehiculo, String color, String linea, String marca, String modelo, int numSerie, List<PlacaEntidad> placas, List<VehiculoTieneCliente> vehiculoCliente) {
-        this.idVehiculo = idVehiculo;
+    public VehiculoEntidad(String color, String linea, String marca, String modelo, int numSerie, List<PlacaEntidad> placas, List<VehiculoTieneCliente> vehiculoCliente) {
         this.color = color;
         this.linea = linea;
         this.marca = marca;

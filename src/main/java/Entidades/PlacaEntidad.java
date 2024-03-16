@@ -29,6 +29,9 @@ public class PlacaEntidad implements Serializable {
     @Column (name = "precio", nullable = false)
     private int precio;
     
+    @Column(name = "costo", nullable = false)
+    private int costo;
+    
     @Column (name = "numAlfanumerico", nullable = false)
     private int num_alfanumerico;
     
@@ -57,8 +60,7 @@ public class PlacaEntidad implements Serializable {
     public PlacaEntidad() {
     }
 
-    public PlacaEntidad(Long id, String estado, int precio, int num_alfanumerico, Date fecha_emision, Date fecha_recepcion, VehiculoEntidad vehiculo, ClienteEntidad cliente, TramiteEntidad tramite) {
-        this.id = id;
+    public PlacaEntidad(String estado, int precio, int num_alfanumerico, Date fecha_emision, Date fecha_recepcion, VehiculoEntidad vehiculo, ClienteEntidad cliente, TramiteEntidad tramite) {
         this.estado = estado;
         this.precio = precio;
         this.num_alfanumerico = num_alfanumerico;
