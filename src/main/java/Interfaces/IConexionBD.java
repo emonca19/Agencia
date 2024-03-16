@@ -11,7 +11,7 @@ import javax.persistence.EntityManager;
  *
  * @author PC
  */
-public interface IConexion {
+public interface IConexionBD {
  
     public EntityManager crearConexion() throws SQLException;
     
