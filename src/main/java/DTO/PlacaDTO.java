@@ -13,6 +13,7 @@ public class PlacaDTO {
     private Long idCliente;
     private Long idVehiculo;
     private Long idTramite;
+    private Long idPlaca;
 
     public PlacaDTO(int costo, String estado, Date fechaEmision, Date fechaRecepcion, int numAlfanumerico, int precio, Long idCliente, Long idVehiculo, Long idTramite) {
         this.costo = costo;
@@ -26,7 +27,28 @@ public class PlacaDTO {
         this.idTramite = idTramite;
     }
 
+    public PlacaDTO(int costo, String estado, Date fechaEmision, Date fechaRecepcion, int numAlfanumerico, int precio, Long idCliente, Long idVehiculo, Long idTramite, Long idPlaca) {
+        this.costo = costo;
+        this.estado = estado;
+        this.fechaEmision = fechaEmision;
+        this.fechaRecepcion = fechaRecepcion;
+        this.numAlfanumerico = numAlfanumerico;
+        this.precio = precio;
+        this.idCliente = idCliente;
+        this.idVehiculo = idVehiculo;
+        this.idTramite = idTramite;
+        this.idPlaca = idPlaca;
+    }
+
     public PlacaDTO() {
+    }
+
+    public Long getIdPlaca() {
+        return idPlaca;
+    }
+
+    public void setIdPlaca(Long idPlaca) {
+        this.idPlaca = idPlaca;
     }
     
     public int getCosto() {

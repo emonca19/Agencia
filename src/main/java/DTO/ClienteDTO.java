@@ -3,6 +3,7 @@ package DTO;
 import java.util.Date;
 
 public class ClienteDTO {
+    private Long idCliente;
     private String rfc;
     private String nombre;
     private String apellidoPaterno;
@@ -17,6 +18,24 @@ public class ClienteDTO {
         this.apellidoMaterno = apellidoMaterno;
         this.fechaNacimiento = fechaNacimiento;
         this.telefono = telefono;
+    }
+
+    public ClienteDTO(Long idCliente, String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String telefono) {
+        this.idCliente = idCliente;
+        this.rfc = rfc;
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.fechaNacimiento = fechaNacimiento;
+        this.telefono = telefono;
+    }
+
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
     }
 
     public ClienteDTO() {

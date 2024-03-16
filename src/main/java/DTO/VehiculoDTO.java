@@ -7,6 +7,7 @@ public class VehiculoDTO {
     private String marca;
     private String modelo;
     private int numSerie;
+    private Long idVehiculo;
 
     public VehiculoDTO() {
     }
@@ -17,6 +18,23 @@ public class VehiculoDTO {
         this.marca = marca;
         this.modelo = modelo;
         this.numSerie = numSerie;
+    }
+
+    public VehiculoDTO(String color, String linea, String marca, String modelo, int numSerie, Long idVehiculo) {
+        this.color = color;
+        this.linea = linea;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.numSerie = numSerie;
+        this.idVehiculo = idVehiculo;
+    }
+
+    public Long getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
     public String getColor() {

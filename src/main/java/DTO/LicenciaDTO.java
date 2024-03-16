@@ -7,6 +7,7 @@ public class LicenciaDTO {
     private int vigencia;
     private Long idCliente;
     private Long idTramite;
+    private Long idLicencia;
 
     public LicenciaDTO() {
     }
@@ -17,6 +18,23 @@ public class LicenciaDTO {
         this.vigencia = vigencia;
         this.idCliente = idCliente;
         this.idTramite = idTramite;
+    }
+
+    public LicenciaDTO(int costo, String estado, int vigencia, Long idCliente, Long idTramite, Long idLicencia) {
+        this.costo = costo;
+        this.estado = estado;
+        this.vigencia = vigencia;
+        this.idCliente = idCliente;
+        this.idTramite = idTramite;
+        this.idLicencia = idLicencia;
+    }
+
+    public Long getIdLicencia() {
+        return idLicencia;
+    }
+
+    public void setIdLicencia(Long idLicencia) {
+        this.idLicencia = idLicencia;
     }
 
     public int getCosto() {
