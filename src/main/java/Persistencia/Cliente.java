@@ -5,7 +5,7 @@
 package Persistencia;
 
 import DTO.ClienteDTO;
-import Entidades.ClienteEntidad;
+import Entidades.PersonaEntidad;
 import Interfaces.ICliente;
 import Interfaces.IConexionBD;
 import java.sql.SQLException;
@@ -35,7 +35,7 @@ public class Cliente implements ICliente{
     }
 
     @Override
-    public ClienteEntidad agregarCliente(ClienteEntidad clienteEntidad) {
+    public PersonaEntidad agregarCliente(PersonaEntidad clienteEntidad) {
     
         entityManagaer.getTransaction().begin();
         

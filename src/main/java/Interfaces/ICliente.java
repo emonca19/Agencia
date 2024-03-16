@@ -5,7 +5,7 @@
 package Interfaces;
 
 import DTO.ClienteDTO;
-import Entidades.ClienteEntidad;
+import Entidades.PersonaEntidad;
 
 /**
  *
@@ -13,7 +13,7 @@ import Entidades.ClienteEntidad;
  */
 public interface ICliente {
     
-    public ClienteEntidad agregarCliente(ClienteEntidad clienteEntidad);
+    public PersonaEntidad agregarCliente(PersonaEntidad clienteEntidad);
     
     public ClienteDTO buscarPorId(Long id);
     
