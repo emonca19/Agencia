@@ -19,15 +19,15 @@ public class ClienteEntidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idCliente")
+    @Column(name="id")
     private Long idCliente;
 
     @Column(name = "curp", nullable = false, length = 25)
     private String curp;
 
-    @Column(name = "fechaNacimiento", nullable = false)
+    @Column(name = "fecha_nacimiento", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date fechaNacimiento;
+    private Date fecha_nacimiento;
 
     @Column(name = "rfc", nullable = false, length = 25)
     private String rfc;
@@ -36,12 +36,12 @@ public class ClienteEntidad implements Serializable {
     private String telefono;
 
     @Column(name = "nombre", nullable = false, length = 50)
-    private String nombres;
+    private List<String> nombres;
 
-    @Column(name = "apellidoPaterno", nullable = false, length = 25)
+    @Column(name = "apellido_paterno", nullable = false, length = 25)
     private String apellido_paterno;
 
-    @Column(name = "apellidoMaterno", nullable = false, length = 25)
+    @Column(name = "apellido_materno", nullable = false, length = 25)
     private String apellido_materno;
 
     
@@ -55,27 +55,12 @@ public class ClienteEntidad implements Serializable {
     private List<LicenciaEntidad> licencias;
     
     @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    private List<VehiculoTieneCliente> vehiculoCliente;
+    private List<Vehiculo_tiene_cliente> vehiculoCliente;
     
     
 
 
     public ClienteEntidad() {
-    }
-
-    public ClienteEntidad(Long idCliente, String curp, Date fechaNacimiento, String rfc, String telefono, String nombres, String apellido_paterno, String apellido_materno, List<TramiteEntidad> tramites, List<PlacaEntidad> placas, List<LicenciaEntidad> licencias, List<VehiculoTieneCliente> vehiculoCliente) {
-        this.idCliente = idCliente;
-        this.curp = curp;
-        this.fechaNacimiento = fechaNacimiento;
-        this.rfc = rfc;
-        this.telefono = telefono;
-        this.nombres = nombres;
-        this.apellido_paterno = apellido_paterno;
-        this.apellido_materno = apellido_materno;
-        this.tramites = tramites;
-        this.placas = placas;
-        this.licencias = licencias;
-        this.vehiculoCliente = vehiculoCliente;
     }
 
     public List<PlacaEntidad> getPlacas() {
@@ -94,11 +79,11 @@ public class ClienteEntidad implements Serializable {
         this.licencias = licencias;
     }
 
-    public List<VehiculoTieneCliente> getVehiculoCliente() {
+    public List<Vehiculo_tiene_cliente> getVehiculoCliente() {
         return vehiculoCliente;
     }
 
-    public void setVehiculoCliente(List<VehiculoTieneCliente> vehiculoCliente) {
+    public void setVehiculoCliente(List<Vehiculo_tiene_cliente> vehiculoCliente) {
         this.vehiculoCliente = vehiculoCliente;
     }
 
@@ -117,7 +102,15 @@ public class ClienteEntidad implements Serializable {
     public void setCurp(String curp) {
         this.curp = curp;
     }
-    
+
+    public Date getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
     public String getRfc() {
         return rfc;
     }
@@ -134,22 +127,13 @@ public class ClienteEntidad implements Serializable {
         this.telefono = telefono;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getNombres() {
+    public List<String> getNombres() {
         return nombres;
     }
 
-    public void setNombres(String nombres) {
+    public void setNombres(List<String> nombres) {
         this.nombres = nombres;
     }
-
 
     public String getApellido_paterno() {
         return apellido_paterno;

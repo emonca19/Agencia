@@ -33,13 +33,6 @@ public class HistorialLicenciaEntidad implements Serializable {
     public HistorialLicenciaEntidad() {
     }
 
-    public HistorialLicenciaEntidad(Long id, String estado, ClienteEntidad cliente, LicenciaEntidad licencia) {
-        this.id = id;
-        this.estado = estado;
-        this.cliente = cliente;
-        this.licencia = licencia;
-    }
-
     public String getEstado() {
         return estado;
     }

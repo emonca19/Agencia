@@ -6,7 +6,7 @@
     <class>Entidades.VehiculoEntidad</class>
     <class>Entidades.ClienteEntidad</class>
     <class>Entidades.LicenciaEntidad</class>
-    <class>Entidades.VehiculoTieneCliente</class>
+    <class>Entidades.Vehiculo_tiene_cliente</class>
     <class>Entidades.TramiteEntidad</class>
     <class>Entidades.HistorialPlacasEntidad</class>
     <class>Entidades.HistorialLicenciaEntidad</class>

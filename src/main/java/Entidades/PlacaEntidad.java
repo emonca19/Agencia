@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -29,14 +28,14 @@ public class PlacaEntidad implements Serializable {
     @Column (name = "precio", nullable = false)
     private int precio;
     
-    @Column (name = "numAlfanumerico", nullable = false)
+    @Column (name = "num_alfanumerico", nullable = false)
     private int num_alfanumerico;
     
-    @Column (name = "fechaEmision", nullable = false)
+    @Column (name = "fecha_emision", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date fecha_emision;
     
-    @Column (name = "fechaRecepcion", nullable = false)
+    @Column (name = "fecha_recepcion", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date fecha_recepcion;
     
@@ -48,33 +47,9 @@ public class PlacaEntidad implements Serializable {
     @JoinColumn(name = "idCliente")
     private ClienteEntidad cliente;
     
-    @OneToOne
-    @JoinColumn(name = "idTramite", referencedColumnName = "idTramite")
-    private TramiteEntidad tramite;
-    
     
 
     public PlacaEntidad() {
-    }
-
-    public PlacaEntidad(Long id, String estado, int precio, int num_alfanumerico, Date fecha_emision, Date fecha_recepcion, VehiculoEntidad vehiculo, ClienteEntidad cliente, TramiteEntidad tramite) {
-        this.id = id;
-        this.estado = estado;
-        this.precio = precio;
-        this.num_alfanumerico = num_alfanumerico;
-        this.fecha_emision = fecha_emision;
-        this.fecha_recepcion = fecha_recepcion;
-        this.vehiculo = vehiculo;
-        this.cliente = cliente;
-        this.tramite = tramite;
-    }
-
-    public TramiteEntidad getTramite() {
-        return tramite;
-    }
-
-    public void setTramite(TramiteEntidad tramite) {
-        this.tramite = tramite;
     }
 
     public ClienteEntidad getCliente() {

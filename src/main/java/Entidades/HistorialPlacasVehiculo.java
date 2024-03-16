@@ -17,7 +17,7 @@ public class HistorialPlacasVehiculo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idHistorialPlacas")
+    @Column(name = "id")
     private Long id;
     
     @Column(name = "estado", nullable = false, length = 25)
@@ -27,19 +27,12 @@ public class HistorialPlacasVehiculo implements Serializable {
     @JoinColumn(name = "idVehiculo")
     private VehiculoEntidad vehiculo;
     
-    @OneToMany(mappedBy = "Vehiculo", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     private List<PlacaEntidad> placas;
     
     
 
     public HistorialPlacasVehiculo() {
-    }
-
-    public HistorialPlacasVehiculo(Long id, String estado, VehiculoEntidad vehiculo, List<PlacaEntidad> placas) {
-        this.id = id;
-        this.estado = estado;
-        this.vehiculo = vehiculo;
-        this.placas = placas;
     }
 
     public String getEstado() {
