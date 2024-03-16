@@ -1,0 +1,159 @@
+package Entidades;
+
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+
+@Entity
+public class VehiculoEntidad implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long idVehiculo;
+    
+    @Column(name = "color", nullable = false, length = 25)
+    private String color;
+    
+    @Column(name = "linea", nullable = false, length = 25)
+    private String linea;
+    
+    @Column(name = "marca", nullable = false, length = 25)
+    private String marca;
+    
+    @Column(name = "modelo", nullable = false, length = 25)
+    private String modelo;
+    
+    @Column(name = "num_serie", nullable = false)
+    private int numSerie;
+    
+    /**
+     * 
+     */
+    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    private List <PlacaEntidad> placas;
+    
+    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    private List<Vehiculo_tiene_cliente> vehiculoCliente;
+
+    public VehiculoEntidad() {
+    }
+
+    public Long getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public List<PlacaEntidad> getPlacas() {
+        return placas;
+    }
+
+    public void setPlacas(List<PlacaEntidad> placas) {
+        this.placas = placas;
+    }
+
+    public List<Vehiculo_tiene_cliente> getVehiculoCliente() {
+        return vehiculoCliente;
+    }
+
+    public void setVehiculoCliente(List<Vehiculo_tiene_cliente> vehiculoCliente) {
+        this.vehiculoCliente = vehiculoCliente;
+    }
+
+    
+
+    public void setIdVehiculo(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
+
+    public List<PlacaEntidad> getPlaca() {
+        return placas;
+    }
+
+    public void setPlaca(List<PlacaEntidad> placas) {
+        this.placas = placas;
+    }
+
+    
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getLinea() {
+        return linea;
+    }
+
+    public void setLinea(String linea) {
+        this.linea = linea;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getNumSerie() {
+        return numSerie;
+    }
+
+    public void setNumSerie(int numSerie) {
+        this.numSerie = numSerie;
+    }
+
+   
+
+    public Long getId() {
+        return idVehiculo;
+    }
+
+    public void setId(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idVehiculo != null ? idVehiculo.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof VehiculoEntidad)) {
+            return false;
+        }
+        VehiculoEntidad other = (VehiculoEntidad) object;
+        if ((this.idVehiculo == null && other.idVehiculo!= null) || (this.idVehiculo != null && !this.idVehiculo.equals(other.idVehiculo))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Entidad.VehiculoEntidad[ id=" + idVehiculo + " ]";
+    }
+
+}
