@@ -46,11 +46,11 @@ public class PersonaEntidad implements Serializable {
     @Column(name = "apellidoMaterno", nullable = false, length = 25)
     private String apellidoMaterno;
     
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE, CascadeType.PERSIST})
     @JoinColumn(name = "idLicencia")
-    private PersonaEntidad licencia;
+    private LicenciaEntidad licencia;
     
-    @OneToMany(mappedBy = "tramite", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     private List<TramiteEntidad> tramites;
     
 //    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
@@ -101,11 +101,11 @@ public class PersonaEntidad implements Serializable {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public PersonaEntidad getLicencia() {
+    public LicenciaEntidad getLicencia() {
         return licencia;
     }
 
-    public void setLicencia(PersonaEntidad licencia) {
+    public void setLicencia(LicenciaEntidad licencia) {
         this.licencia = licencia;
     }
 

@@ -19,12 +19,14 @@ public class VehiculoTieneCliente implements Serializable {
     private Long id;
       
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @JoinColumn(name = "idVehiculo")
+    private PersonaEntidad cliente;
+    
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE, CascadeType.PERSIST})
     @JoinColumn(name = "idCliente")
     private VehiculoEntidad vehiculo;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "idVehiculo")
-    private PersonaEntidad cliente;
+    
     
 
     public VehiculoTieneCliente() {
@@ -85,8 +87,6 @@ public class VehiculoTieneCliente implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("VehiculoTieneCliente{");
         sb.append("id=").append(id);
-        sb.append(", vehiculo=").append(vehiculo);
-        sb.append(", cliente=").append(cliente);
         sb.append('}');
         return sb.toString();
     }

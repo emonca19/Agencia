@@ -37,23 +37,23 @@ public class VehiculoEntidad implements Serializable {
     /**
      * 
      */
-    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.PERSIST})
     private List <PlacaEntidad> placas;
     
-    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE})
     private List<VehiculoTieneCliente> vehiculoCliente;
 
     public VehiculoEntidad() {
     }
 
-    public VehiculoEntidad(String color, String linea, String marca, String modelo, int numSerie, List<PlacaEntidad> placas, List<VehiculoTieneCliente> vehiculoCliente) {
+    public VehiculoEntidad(String color, String linea, String marca, String modelo, int numSerie) {
         this.color = color;
         this.linea = linea;
         this.marca = marca;
         this.modelo = modelo;
         this.numSerie = numSerie;
-        this.placas = placas;
-        this.vehiculoCliente = vehiculoCliente;
+//        this.placas = placas;
+//        this.vehiculoCliente = vehiculoCliente;
     }
 
     
@@ -180,7 +180,6 @@ public class VehiculoEntidad implements Serializable {
         sb.append(", modelo=").append(modelo);
         sb.append(", numSerie=").append(numSerie);
         sb.append(", placas=").append(placas);
-        sb.append(", vehiculoCliente=").append(vehiculoCliente);
         sb.append('}');
         return sb.toString();
     }

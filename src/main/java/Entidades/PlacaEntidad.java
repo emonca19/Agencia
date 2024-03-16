@@ -16,13 +16,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class PlacaEntidad implements Serializable {
+public class PlacaEntidad extends TramiteEntidad implements Serializable {
 
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idPlaca")
-    private Long id;
+//    
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "idPlaca")
+//    private Long id;
     
     @Column(name = "estado", nullable = false, length = 25)
     private String estado;
@@ -41,7 +41,7 @@ public class PlacaEntidad implements Serializable {
     @Temporal(TemporalType.DATE)
     private Calendar fecha_recepcion;
     
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "idVehiculo")
     private VehiculoEntidad vehiculo;
     
@@ -133,13 +133,13 @@ public class PlacaEntidad implements Serializable {
 
     
     
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
 //    @Override
 //    public int hashCode() {
@@ -165,7 +165,7 @@ public class PlacaEntidad implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("PlacaEntidad{");
-        sb.append("id=").append(id);
+//        sb.append("id=").append(id);
         sb.append(", estado=").append(estado);
         sb.append(", costo=").append(costo);
         sb.append(", numeroPlaca=").append(numeroPlaca);
