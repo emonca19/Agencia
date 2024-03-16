@@ -17,7 +17,7 @@ public class ConexionBD implements IConexionBD{
     
     EntityManagerFactory managerFactory;
     EntityManager entityManager;
-    String nombrePersistencia = "persistencia";
+    String nombrePersistencia = "agenciatransito";
     
     public ConexionBD(){}
     
