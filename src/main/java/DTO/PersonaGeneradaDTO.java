@@ -2,8 +2,8 @@ package DTO;
 
 import java.util.Date;
 
-public class ClienteDTO {
-    private Long idCliente;
+public class PersonaGeneradaDTO {
+    
     private String rfc;
     private String nombre;
     private String apellidoPaterno;
@@ -11,7 +11,8 @@ public class ClienteDTO {
     private Date fechaNacimiento;
     private String telefono;
 
-    public ClienteDTO(String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String telefono) {
+    public PersonaGeneradaDTO(String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String telefono) {
+     
         this.rfc = rfc;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -20,25 +21,7 @@ public class ClienteDTO {
         this.telefono = telefono;
     }
 
-    public ClienteDTO(Long idCliente, String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String telefono) {
-        this.idCliente = idCliente;
-        this.rfc = rfc;
-        this.nombre = nombre;
-        this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
-        this.fechaNacimiento = fechaNacimiento;
-        this.telefono = telefono;
-    }
-
-    public Long getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(Long idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public ClienteDTO() {
+    public PersonaGeneradaDTO() {
     }
 
     
@@ -89,7 +72,19 @@ public class ClienteDTO {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("PersonaGeneradaDTO{");
+        sb.append("rfc=").append(rfc);
+        sb.append(", nombre=").append(nombre);
+        sb.append(", apellidoPaterno=").append(apellidoPaterno);
+        sb.append(", apellidoMaterno=").append(apellidoMaterno);
+        sb.append(", fechaNacimiento=").append(fechaNacimiento);
+        sb.append(", telefono=").append(telefono);
+        sb.append('}');
+        return sb.toString();
+    }
 
 }
