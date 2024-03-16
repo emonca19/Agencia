@@ -20,23 +20,23 @@ public class TramiteEntidad implements Serializable {
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idCliente")
-    private ClienteEntidad cliente;
+    private PersonaEntidad cliente;
 
     
     
     public TramiteEntidad() {
     }
 
-    public TramiteEntidad(ClienteEntidad cliente) {
+    public TramiteEntidad(PersonaEntidad cliente) {
         
         this.cliente = cliente;
     }
 
-    public ClienteEntidad getCliente() {
+    public PersonaEntidad getCliente() {
         return cliente;
     }
 
-    public void setCliente(ClienteEntidad cliente) {
+    public void setCliente(PersonaEntidad cliente) {
         this.cliente = cliente;
     }
 

@@ -32,7 +32,7 @@ public class LicenciaEntidad implements Serializable {
     
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idCliente")
-    private ClienteEntidad cliente;
+    private PersonaEntidad cliente;
     
     @OneToOne
     @JoinColumn(name = "idTramite", referencedColumnName = "idTramite")
@@ -43,7 +43,7 @@ public class LicenciaEntidad implements Serializable {
     public LicenciaEntidad() {
     }
 
-    public LicenciaEntidad(String estado, ClienteEntidad cliente, TramiteEntidad tramite) {
+    public LicenciaEntidad(String estado, PersonaEntidad cliente, TramiteEntidad tramite) {
         this.estado = estado;
         this.cliente = cliente;
         this.tramite = tramite;
@@ -73,11 +73,11 @@ public class LicenciaEntidad implements Serializable {
         this.estado = estado;
     }
 
-    public ClienteEntidad getCliente() {
+    public PersonaEntidad getCliente() {
         return cliente;
     }
 
-    public void setCliente(ClienteEntidad cliente) {
+    public void setCliente(PersonaEntidad cliente) {
         this.cliente = cliente;
     }
 
