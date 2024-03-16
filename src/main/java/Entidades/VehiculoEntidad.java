@@ -16,7 +16,7 @@ public class VehiculoEntidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "idVehiculo")
     private Long idVehiculo;
     
     @Column(name = "color", nullable = false, length = 25)
@@ -31,7 +31,7 @@ public class VehiculoEntidad implements Serializable {
     @Column(name = "modelo", nullable = false, length = 25)
     private String modelo;
     
-    @Column(name = "num_serie", nullable = false)
+    @Column(name = "numSerie", nullable = false)
     private int numSerie;
     
     /**
@@ -41,11 +41,23 @@ public class VehiculoEntidad implements Serializable {
     private List <PlacaEntidad> placas;
     
     @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    private List<Vehiculo_tiene_cliente> vehiculoCliente;
+    private List<VehiculoTieneCliente> vehiculoCliente;
 
     public VehiculoEntidad() {
     }
 
+    public VehiculoEntidad(Long idVehiculo, String color, String linea, String marca, String modelo, int numSerie, List<PlacaEntidad> placas, List<VehiculoTieneCliente> vehiculoCliente) {
+        this.idVehiculo = idVehiculo;
+        this.color = color;
+        this.linea = linea;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.numSerie = numSerie;
+        this.placas = placas;
+        this.vehiculoCliente = vehiculoCliente;
+    }
+
+    
     public Long getIdVehiculo() {
         return idVehiculo;
     }
@@ -58,11 +70,11 @@ public class VehiculoEntidad implements Serializable {
         this.placas = placas;
     }
 
-    public List<Vehiculo_tiene_cliente> getVehiculoCliente() {
+    public List<VehiculoTieneCliente> getVehiculoCliente() {
         return vehiculoCliente;
     }
 
-    public void setVehiculoCliente(List<Vehiculo_tiene_cliente> vehiculoCliente) {
+    public void setVehiculoCliente(List<VehiculoTieneCliente> vehiculoCliente) {
         this.vehiculoCliente = vehiculoCliente;
     }
 

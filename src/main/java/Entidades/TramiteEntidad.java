@@ -2,6 +2,7 @@ package Entidades;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,11 +15,22 @@ public class TramiteEntidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idTramite")
     private Long id;
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idCliente")
     private ClienteEntidad cliente;
+
+    
+    
+    public TramiteEntidad() {
+    }
+
+    public TramiteEntidad(Long id, ClienteEntidad cliente) {
+        this.id = id;
+        this.cliente = cliente;
+    }
 
     public ClienteEntidad getCliente() {
         return cliente;
@@ -26,10 +38,6 @@ public class TramiteEntidad implements Serializable {
 
     public void setCliente(ClienteEntidad cliente) {
         this.cliente = cliente;
-    }
-
-    
-    public TramiteEntidad() {
     }
 
     public Long getId() {

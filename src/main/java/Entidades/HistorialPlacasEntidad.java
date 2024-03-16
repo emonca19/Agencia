@@ -33,6 +33,13 @@ public class HistorialPlacasEntidad implements Serializable {
     public HistorialPlacasEntidad() {
     }
 
+    public HistorialPlacasEntidad(Long id, String estado, VehiculoEntidad vehiculo, PlacaEntidad placa) {
+        this.id = id;
+        this.estado = estado;
+        this.vehiculo = vehiculo;
+        this.placa = placa;
+    }
+
     public String getEstado() {
         return estado;
     }

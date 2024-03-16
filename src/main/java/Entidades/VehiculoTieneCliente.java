@@ -2,27 +2,32 @@ package Entidades;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Vehiculo_tiene_cliente implements Serializable {
+public class VehiculoTieneCliente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="idVehiculoCliente")
     private Long id;
       
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @JoinColumn(name = "idCliente")
     private VehiculoEntidad vehiculo;
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @JoinColumn(name = "idVehiculo")
     private ClienteEntidad cliente;
     
 
-    public Vehiculo_tiene_cliente() {
+    public VehiculoTieneCliente() {
     }
 
     public VehiculoEntidad getVehiculo() {
@@ -60,10 +65,10 @@ public class Vehiculo_tiene_cliente implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Vehiculo_tiene_cliente)) {
+        if (!(object instanceof VehiculoTieneCliente)) {
             return false;
         }
-        Vehiculo_tiene_cliente other = (Vehiculo_tiene_cliente) object;
+        VehiculoTieneCliente other = (VehiculoTieneCliente) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

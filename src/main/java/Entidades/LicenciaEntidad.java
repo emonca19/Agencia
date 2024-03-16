@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class LicenciaEntidad implements Serializable {
@@ -23,8 +24,24 @@ public class LicenciaEntidad implements Serializable {
     private String estado;
     
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "idCliente")
     private ClienteEntidad cliente;
+    
+    @OneToOne
+    @JoinColumn(name = "idTramite", referencedColumnName = "idTramite")
+    private TramiteEntidad tramite;
+
+   
+
+    public LicenciaEntidad() {
+    }
+
+    public LicenciaEntidad(Long id, String estado, ClienteEntidad cliente, TramiteEntidad tramite) {
+        this.id = id;
+        this.estado = estado;
+        this.cliente = cliente;
+        this.tramite = tramite;
+    }
 
     public Long getId() {
         return id;
@@ -34,7 +51,12 @@ public class LicenciaEntidad implements Serializable {
         this.id = id;
     }
 
-    public LicenciaEntidad() {
+    public TramiteEntidad getTramite() {
+        return tramite;
+    }
+
+    public void setTramite(TramiteEntidad tramite) {
+        this.tramite = tramite;
     }
 
     public String getEstado() {
