@@ -1,11 +1,8 @@
 package Entidades;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class LicenciaEntidad extends TramiteEntidad implements Serializable {
@@ -19,10 +16,10 @@ public class LicenciaEntidad extends TramiteEntidad implements Serializable {
     @Column(name = "costo", nullable = false)
     private int costo;
     
-    
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "idCPersona")
-    private PersonaEntidad cliente;
+//    
+//    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+//    @JoinColumn(name = "idPersona")
+//    private PersonaEntidad cliente;
 
     public LicenciaEntidad() {
     }
@@ -40,14 +37,14 @@ public class LicenciaEntidad extends TramiteEntidad implements Serializable {
     public void setEstado(int estado) {
         this.estado = estado;
     }
-    
-    public PersonaEntidad getPersona() {
-        return cliente;
-    }
-
-    public void setCliente(PersonaEntidad cliente) {
-        this.cliente = cliente;
-    }
+//    
+//    public PersonaEntidad getPersona() {
+//        return cliente;
+//    }
+//
+//    public void setCliente(PersonaEntidad cliente) {
+//        this.cliente = cliente;
+//    }
 
     @Override
     public String toString() {
@@ -57,7 +54,6 @@ public class LicenciaEntidad extends TramiteEntidad implements Serializable {
         sb.append(", estado=").append(estado);
         sb.append(", vigencia=").append(vigencia);
         sb.append(", costo=").append(costo);
-        sb.append(", cliente=").append(cliente);
         sb.append('}');
         return sb.toString();
     }
