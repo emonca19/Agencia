@@ -37,14 +37,14 @@ public class TramiteEntidad implements Serializable {
     
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idCliente")
-    private PersonaEntidad cliente;
+    private ClienteEntidad cliente;
 
     
     
     public TramiteEntidad() {
     }
 
-    public TramiteEntidad(int costo, int tipoTramite, Calendar fechaTramite, PersonaEntidad cliente) {
+    public TramiteEntidad(int costo, int tipoTramite, Calendar fechaTramite, ClienteEntidad cliente) {
         
         this.costo = costo;
         this.tipoTramite = tipoTramite;
@@ -77,11 +77,11 @@ public class TramiteEntidad implements Serializable {
     }
     
 
-    public PersonaEntidad getCliente() {
+    public ClienteEntidad getCliente() {
         return cliente;
     }
 
-    public void setCliente(PersonaEntidad cliente) {
+    public void setCliente(ClienteEntidad cliente) {
         this.cliente = cliente;
     }
 

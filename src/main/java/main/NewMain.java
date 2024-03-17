@@ -8,6 +8,8 @@ import javax.persistence.Persistence;
 public class NewMain {
 
     public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("agenciatransito");
+        EntityManager em = emf.createEntityManager();
         
 
     }

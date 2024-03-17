@@ -3,6 +3,7 @@ package Entidades;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-public class PersonaEntidad implements Serializable {
+public class ClienteEntidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,10 +69,10 @@ public class PersonaEntidad implements Serializable {
     
 
 
-    public PersonaEntidad() {
+    public ClienteEntidad() {
     }
 
-    public PersonaEntidad(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellido_paterno, String apellido_materno) {
+    public ClienteEntidad(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellido_paterno, String apellido_materno) {
         this.curp = curp;
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;
@@ -218,17 +219,51 @@ public class PersonaEntidad implements Serializable {
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof PersonaEntidad)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        PersonaEntidad other = (PersonaEntidad) object;
-        if ((this.idCliente == null && other.idCliente != null) || (this.idCliente != null && !this.idCliente.equals(other.idCliente))) {
+        if (getClass() != obj.getClass()) {
             return false;
         }
-        return true;
+        final ClienteEntidad other = (ClienteEntidad) obj;
+        if (!Objects.equals(this.curp, other.curp)) {
+            return false;
+        }
+        if (!Objects.equals(this.rfc, other.rfc)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefono, other.telefono)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombres, other.nombres)) {
+            return false;
+        }
+        if (!Objects.equals(this.apellidoPaterno, other.apellidoPaterno)) {
+            return false;
+        }
+        if (!Objects.equals(this.apellidoMaterno, other.apellidoMaterno)) {
+            return false;
+        }
+        if (!Objects.equals(this.idCliente, other.idCliente)) {
+            return false;
+        }
+        if (!Objects.equals(this.fechaNacimiento, other.fechaNacimiento)) {
+            return false;
+        }
+        if (!Objects.equals(this.licencia, other.licencia)) {
+            return false;
+        }
+        if (!Objects.equals(this.tramites, other.tramites)) {
+            return false;
+        }
+        return Objects.equals(this.vehiculoCliente, other.vehiculoCliente);
     }
+
+    
 
     @Override
     public String toString() {
