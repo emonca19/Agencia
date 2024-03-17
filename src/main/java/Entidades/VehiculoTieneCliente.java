@@ -20,7 +20,7 @@ public class VehiculoTieneCliente implements Serializable {
       
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idVehiculo")
-    private ClienteEntidad cliente;
+    private PersonaEntidad persona;
     
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE, CascadeType.PERSIST})
     @JoinColumn(name = "idCliente")
@@ -45,12 +45,12 @@ public class VehiculoTieneCliente implements Serializable {
         this.vehiculo = vehiculo;
     }
 
-    public ClienteEntidad getCliente() {
-        return cliente;
+    public PersonaEntidad getPersona() {
+        return persona;
     }
 
-    public void setCliente(ClienteEntidad cliente) {
-        this.cliente = cliente;
+    public void setCliente(PersonaEntidad persona) {
+        this.persona = persona;
     }
 
     

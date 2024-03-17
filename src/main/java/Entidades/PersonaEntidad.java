@@ -18,12 +18,12 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-public class ClienteEntidad implements Serializable {
+public class PersonaEntidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idCliente")
-    private Long idCliente;
+    @Column(name="idPersona")
+    private Long idPersona;
 
     @Column(name = "curp", nullable = false, length = 18)
     private String curp;
@@ -69,17 +69,17 @@ public class ClienteEntidad implements Serializable {
     
 
 
-    public ClienteEntidad() {
+    public PersonaEntidad() {
     }
 
-    public ClienteEntidad(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellido_paterno, String apellido_materno) {
+    public PersonaEntidad(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
         this.curp = curp;
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;
         this.telefono = telefono;
         this.nombres = nombres;
-        this.apellidoPaterno = apellido_paterno;
-        this.apellidoMaterno = apellido_materno;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
 //        this.tramites = tramites;
 //        this.placas = placas;
 //        this.licencias = licencias;
@@ -142,8 +142,8 @@ public class ClienteEntidad implements Serializable {
         this.vehiculoCliente = vehiculoCliente;
     }
 
-    public Long getIdCliente() {
-        return idCliente;
+    public Long getIdPersona() {
+        return idPersona;
     }
 
     public String getCurp() {
@@ -214,7 +214,7 @@ public class ClienteEntidad implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idCliente != null ? idCliente.hashCode() : 0);
+        hash += (idPersona != null ? idPersona.hashCode() : 0);
         return hash;
     }
 
@@ -229,7 +229,7 @@ public class ClienteEntidad implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ClienteEntidad other = (ClienteEntidad) obj;
+        final PersonaEntidad other = (PersonaEntidad) obj;
         if (!Objects.equals(this.curp, other.curp)) {
             return false;
         }
@@ -248,7 +248,7 @@ public class ClienteEntidad implements Serializable {
         if (!Objects.equals(this.apellidoMaterno, other.apellidoMaterno)) {
             return false;
         }
-        if (!Objects.equals(this.idCliente, other.idCliente)) {
+        if (!Objects.equals(this.idPersona, other.idPersona)) {
             return false;
         }
         if (!Objects.equals(this.fechaNacimiento, other.fechaNacimiento)) {
@@ -269,7 +269,7 @@ public class ClienteEntidad implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("ClienteEntidad{");
-        sb.append("idCliente=").append(idCliente);
+        sb.append("idCliente=").append(idPersona);
         sb.append(", curp=").append(curp);
         sb.append(", fechaNacimiento=").append(fechaNacimiento);
         sb.append(", rfc=").append(rfc);

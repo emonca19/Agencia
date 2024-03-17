@@ -10,7 +10,7 @@ import java.util.Calendar;
  *
  * @author Amos Heli Olguin Quiroz
  */
-public class ClienteNuevoDTO {
+public class PersonaNuevaDTO {
     
     private Long idCliente;
     private String curp;
@@ -21,10 +21,10 @@ public class ClienteNuevoDTO {
     private String apellidoPaterno;
     private String apellidoMaterno;
 
-    public ClienteNuevoDTO() {
+    public PersonaNuevaDTO() {
     }
 
-    public ClienteNuevoDTO(Long idCliente, String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+    public PersonaNuevaDTO(Long idCliente, String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
         this.idCliente = idCliente;
         this.curp = curp;
         this.fechaNacimiento = fechaNacimiento;
@@ -35,7 +35,7 @@ public class ClienteNuevoDTO {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public ClienteNuevoDTO(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+    public PersonaNuevaDTO(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
         this.curp = curp;
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;
@@ -45,7 +45,7 @@ public class ClienteNuevoDTO {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public ClienteNuevoDTO(Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+    public PersonaNuevaDTO(Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;
         this.telefono = telefono;

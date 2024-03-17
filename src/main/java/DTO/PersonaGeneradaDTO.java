@@ -2,7 +2,7 @@ package DTO;
 
 import java.util.Calendar;
 
-public class ClienteGeneradoDTO {
+public class PersonaGeneradaDTO {
     
     private String rfc;
     private String nombre;
@@ -11,7 +11,7 @@ public class ClienteGeneradoDTO {
     private Calendar fechaNacimiento;
     private String telefono;
 
-    public ClienteGeneradoDTO(String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Calendar fechaNacimiento, String telefono) {
+    public PersonaGeneradaDTO(String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Calendar fechaNacimiento, String telefono) {
      
         this.rfc = rfc;
         this.nombre = nombre;
@@ -21,7 +21,7 @@ public class ClienteGeneradoDTO {
         this.telefono = telefono;
     }
 
-    public ClienteGeneradoDTO() {
+    public PersonaGeneradaDTO() {
     }
 
     
