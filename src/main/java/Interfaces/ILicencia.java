@@ -5,6 +5,7 @@
 package Interfaces;
 
 import Entidades.LicenciaEntidad;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -16,9 +17,10 @@ public interface ILicencia {
     
     void guardarLicenciaBD(LicenciaEntidad licencia);
     
-    LicenciaEntidad buscarLicenciaPorCURP(String curp);
+    
     List<LicenciaEntidad> buscarLicenciasPorNombre(String nombre);
-    List<LicenciaEntidad> buscarLicenciasPorFechaNacimiento(Date fechaNacimiento);
+    List<LicenciaEntidad> buscarLicenciaPorCURP(String curp);
+    List<LicenciaEntidad> buscarLicenciasPorFechaNacimiento(Calendar fechaNacimiento);
     List<LicenciaEntidad> obtenerTodasLasLicencias();
     
 }

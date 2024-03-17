@@ -11,11 +11,11 @@ import Entidades.PersonaEntidad;
  *
  * @author PC
  */
-public interface ICliente {
+public interface IPersona {
     
-    public PersonaEntidad agregarCliente(PersonaEntidad personaEntidad);
+    public PersonaEntidad agregarPersona(PersonaNuevaDTO persona);
     
-    public PersonaNuevaDTO buscarPorId(Long id);
+    public PersonaEntidad buscarPorId(Long id);
     
     
 }
