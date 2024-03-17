@@ -51,7 +51,7 @@ public class PersonaEntidad implements Serializable {
     @JoinColumn(name = "idLicencia")
     private LicenciaEntidad licencia;
     
-    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "persona", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     private List<TramiteEntidad> tramites;
     
 //    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
@@ -63,7 +63,7 @@ public class PersonaEntidad implements Serializable {
 //    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 //    private List<LicenciaEntidad> licencias;
     
-    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "persona", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<VehiculoTieneCliente> vehiculoCliente;
     
     
