@@ -35,6 +35,28 @@ public class ClienteNuevoDTO {
         this.apellidoMaterno = apellidoMaterno;
     }
 
+    public ClienteNuevoDTO(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+        this.curp = curp;
+        this.fechaNacimiento = fechaNacimiento;
+        this.rfc = rfc;
+        this.telefono = telefono;
+        this.nombres = nombres;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    public ClienteNuevoDTO(Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+        this.fechaNacimiento = fechaNacimiento;
+        this.rfc = rfc;
+        this.telefono = telefono;
+        this.nombres = nombres;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
+    
+    
+    
+
     public Long getIdCliente() {
         return idCliente;
     }
