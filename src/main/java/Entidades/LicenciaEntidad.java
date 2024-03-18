@@ -62,4 +62,8 @@ public class LicenciaEntidad extends TramiteEntidad implements Serializable {
         return sb.toString();
     }
 
+    public void setPersona(PersonaEntidad persona) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

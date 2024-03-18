@@ -2,16 +2,11 @@ package Entidades;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,8 +25,8 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
     @Column (name = "costo", nullable = false)
     private int costo;
     
-    @Column (name = "numeroPlaca", nullable = false)
-    private int numeroPlaca;
+    @Column (name = "numeroPlaca", nullable = false, length = 25)
+    private String numeroPlaca;
     
     @Column (name = "fechaEmision", nullable = false)
     @Temporal(TemporalType.DATE)
@@ -58,10 +53,10 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
     public PlacaEntidad() {
     }
 
-    public PlacaEntidad(String estado, int precio, int num_alfanumerico, Calendar fecha_emision, Calendar fecha_recepcion) {
+    public PlacaEntidad(String estado, int precio, String numeroPlaca, Calendar fecha_emision, Calendar fecha_recepcion) {
         this.estado = estado;
         this.costo = precio;
-        this.numeroPlaca = num_alfanumerico;
+        this.numeroPlaca = numeroPlaca;
         this.fecha_emision = fecha_emision;
         this.fecha_recepcion = fecha_recepcion;
     }
@@ -107,13 +102,23 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
         this.costo = precio;
     }
 
-    public int getNum_alfanumerico() {
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public String getNumeroPlaca() {
         return numeroPlaca;
     }
 
-    public void setNum_alfanumerico(int num_alfanumerico) {
-        this.numeroPlaca = num_alfanumerico;
+    public void setNumeroPlaca(String numeroPlaca) {
+        this.numeroPlaca = numeroPlaca;
     }
+
+   
 
     public Calendar getFecha_emision() {
         return fecha_emision;
