@@ -3,6 +3,7 @@ package Entidades;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,8 +22,8 @@ public class PersonaEntidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idCliente")
-    private Long idCliente;
+    @Column(name="idPersona")
+    private Long idPersona;
 
     @Column(name = "curp", nullable = false, length = 18)
     private String curp;
@@ -50,7 +51,7 @@ public class PersonaEntidad implements Serializable {
     @JoinColumn(name = "idLicencia")
     private LicenciaEntidad licencia;
     
-    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "persona", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     private List<TramiteEntidad> tramites;
     
 //    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
@@ -62,7 +63,7 @@ public class PersonaEntidad implements Serializable {
 //    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 //    private List<LicenciaEntidad> licencias;
     
-    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "persona", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<VehiculoTieneCliente> vehiculoCliente;
     
     
@@ -71,14 +72,14 @@ public class PersonaEntidad implements Serializable {
     public PersonaEntidad() {
     }
 
-    public PersonaEntidad(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellido_paterno, String apellido_materno) {
+    public PersonaEntidad(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
         this.curp = curp;
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;
         this.telefono = telefono;
         this.nombres = nombres;
-        this.apellidoPaterno = apellido_paterno;
-        this.apellidoMaterno = apellido_materno;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
 //        this.tramites = tramites;
 //        this.placas = placas;
 //        this.licencias = licencias;
@@ -141,8 +142,8 @@ public class PersonaEntidad implements Serializable {
         this.vehiculoCliente = vehiculoCliente;
     }
 
-    public Long getIdCliente() {
-        return idCliente;
+    public Long getIdPersona() {
+        return idPersona;
     }
 
     public String getCurp() {
@@ -213,28 +214,62 @@ public class PersonaEntidad implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idCliente != null ? idCliente.hashCode() : 0);
+        hash += (idPersona != null ? idPersona.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof PersonaEntidad)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        PersonaEntidad other = (PersonaEntidad) object;
-        if ((this.idCliente == null && other.idCliente != null) || (this.idCliente != null && !this.idCliente.equals(other.idCliente))) {
+        if (getClass() != obj.getClass()) {
             return false;
         }
-        return true;
+        final PersonaEntidad other = (PersonaEntidad) obj;
+        if (!Objects.equals(this.curp, other.curp)) {
+            return false;
+        }
+        if (!Objects.equals(this.rfc, other.rfc)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefono, other.telefono)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombres, other.nombres)) {
+            return false;
+        }
+        if (!Objects.equals(this.apellidoPaterno, other.apellidoPaterno)) {
+            return false;
+        }
+        if (!Objects.equals(this.apellidoMaterno, other.apellidoMaterno)) {
+            return false;
+        }
+        if (!Objects.equals(this.idPersona, other.idPersona)) {
+            return false;
+        }
+        if (!Objects.equals(this.fechaNacimiento, other.fechaNacimiento)) {
+            return false;
+        }
+        if (!Objects.equals(this.licencia, other.licencia)) {
+            return false;
+        }
+        if (!Objects.equals(this.tramites, other.tramites)) {
+            return false;
+        }
+        return Objects.equals(this.vehiculoCliente, other.vehiculoCliente);
     }
+
+    
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("ClienteEntidad{");
-        sb.append("idCliente=").append(idCliente);
+        sb.append("idCliente=").append(idPersona);
         sb.append(", curp=").append(curp);
         sb.append(", fechaNacimiento=").append(fechaNacimiento);
         sb.append(", rfc=").append(rfc);

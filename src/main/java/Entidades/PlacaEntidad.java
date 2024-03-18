@@ -30,11 +30,11 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
     
     @Column (name = "fechaEmision", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Calendar fecha_emision;
+    private Calendar fechaEmision;
     
     @Column (name = "fechaRecepcion", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Calendar fecha_recepcion;
+    private Calendar fechaRecepcion;
     
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "idVehiculo")
@@ -53,12 +53,14 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
     public PlacaEntidad() {
     }
 
-    public PlacaEntidad(String estado, int precio, String numeroPlaca, Calendar fecha_emision, Calendar fecha_recepcion) {
+    public PlacaEntidad(String estado, int precio, String numeroPlaca, Calendar fechaEmision, Calendar fechaRecepcion) {
         this.estado = estado;
         this.costo = precio;
         this.numeroPlaca = numeroPlaca;
-        this.fecha_emision = fecha_emision;
-        this.fecha_recepcion = fecha_recepcion;
+        this.fechaEmision = fechaEmision;
+        this.fechaRecepcion = fechaRecepcion;
+        this.fechaRecepcion = fechaRecepcion;
+        this.fechaEmision = fechaEmision;
     }
 
 //    public TramiteEntidad getTramite() {
@@ -85,6 +87,30 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
         this.vehiculo = vehiculo;
     }
 
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public Calendar getFechaEmision() {
+        return fechaEmision;
+    }
+
+    public void setFechaEmision(Calendar fechaEmision) {
+        this.fechaEmision = fechaEmision;
+    }
+
+    public Calendar getFechaRecepcion() {
+        return fechaRecepcion;
+    }
+
+    public void setFechaRecepcion(Calendar fechaRecepcion) {
+        this.fechaRecepcion = fechaRecepcion;
+    }
+
     
     public String getEstado() {
         return estado;
@@ -102,14 +128,6 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
         this.costo = precio;
     }
 
-    public int getCosto() {
-        return costo;
-    }
-
-    public void setCosto(int costo) {
-        this.costo = costo;
-    }
-
     public String getNumeroPlaca() {
         return numeroPlaca;
     }
@@ -121,19 +139,19 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
    
 
     public Calendar getFecha_emision() {
-        return fecha_emision;
+        return fechaEmision;
     }
 
     public void setFecha_emision(Calendar fecha_emision) {
-        this.fecha_emision = fecha_emision;
+        this.fechaEmision = fecha_emision;
     }
 
     public Calendar getFecha_recepcion() {
-        return fecha_recepcion;
+        return fechaRecepcion;
     }
 
     public void setFecha_recepcion(Calendar fecha_recepcion) {
-        this.fecha_recepcion = fecha_recepcion;
+        this.fechaRecepcion = fecha_recepcion;
     }
 
     
@@ -174,8 +192,8 @@ public class PlacaEntidad extends TramiteEntidad implements Serializable {
         sb.append(", estado=").append(estado);
         sb.append(", costo=").append(costo);
         sb.append(", numeroPlaca=").append(numeroPlaca);
-        sb.append(", fecha_emision=").append(fecha_emision);
-        sb.append(", fecha_recepcion=").append(fecha_recepcion);
+        sb.append(", fecha_emision=").append(fechaEmision);
+        sb.append(", fecha_recepcion=").append(fechaRecepcion);
         sb.append(", vehiculo=").append(vehiculo);
 //        sb.append(", cliente=").append(cliente);
 //        sb.append(", tramite=").append(tramite);

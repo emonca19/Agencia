@@ -36,20 +36,20 @@ public class TramiteEntidad implements Serializable {
     private Calendar fechaTramite;
     
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "idCliente")
-    private PersonaEntidad cliente;
+    @JoinColumn(name = "idPersona")
+    private PersonaEntidad persona;
 
     
     
     public TramiteEntidad() {
     }
 
-    public TramiteEntidad(int costo, int tipoTramite, Calendar fechaTramite, PersonaEntidad cliente) {
+    public TramiteEntidad(int costo, int tipoTramite, Calendar fechaTramite, PersonaEntidad persona) {
         
         this.costo = costo;
         this.tipoTramite = tipoTramite;
         this.fechaTramite = fechaTramite;
-        this.cliente = cliente;
+        this.persona = persona;
     }
 
     public int getCosto() {
@@ -77,12 +77,12 @@ public class TramiteEntidad implements Serializable {
     }
     
 
-    public PersonaEntidad getCliente() {
-        return cliente;
+    public PersonaEntidad getPersona() {
+        return persona;
     }
 
-    public void setCliente(PersonaEntidad cliente) {
-        this.cliente = cliente;
+    public void setPersona(PersonaEntidad cliente) {
+        this.persona = cliente;
     }
 
 
@@ -115,7 +115,7 @@ public class TramiteEntidad implements Serializable {
         sb.append(", tipoTramite=").append(tipoTramite);
 //        sb.append(", tipoCobro=").append(tipoCobro);
         sb.append(", fechaNacimiento=").append(fechaTramite);
-        sb.append(", cliente=").append(cliente);
+        sb.append(", cliente=").append(persona);
         sb.append('}');
         return sb.toString();
     }

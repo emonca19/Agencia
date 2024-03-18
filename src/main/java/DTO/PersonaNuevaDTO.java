@@ -5,7 +5,6 @@
 package DTO;
 
 import java.util.Calendar;
-import java.util.Objects;
 
 /**
  *
@@ -35,6 +34,28 @@ public class PersonaNuevaDTO {
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
     }
+
+    public PersonaNuevaDTO(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+        this.curp = curp;
+        this.fechaNacimiento = fechaNacimiento;
+        this.rfc = rfc;
+        this.telefono = telefono;
+        this.nombres = nombres;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    public PersonaNuevaDTO(Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+        this.fechaNacimiento = fechaNacimiento;
+        this.rfc = rfc;
+        this.telefono = telefono;
+        this.nombres = nombres;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
+    
+    
+    
 
     public Long getIdCliente() {
         return idCliente;
