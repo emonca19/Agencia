@@ -57,7 +57,7 @@ public class NewMain {
         
         Calendar fecha1 = Calendar.getInstance();
         fecha1.set(2024, 2, 2);
-        PlacaEntidad placa = new  PlacaEntidad("1",  0, "ABC45", fecha, fecha);
+        PlacaEntidad placa = new  PlacaEntidad("1",  0, "ABC45" , fecha, fecha);
         placa.setFechaTramite(fecha);
         placa.setTipoTramite(2);
         List<PlacaEntidad> listaPLacas = new ArrayList<>();
