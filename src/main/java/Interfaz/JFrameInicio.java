@@ -62,7 +62,7 @@ public class JFrameInicio extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(600, 60));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_secretarias_bn (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sonoraLogoImagen.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 94, 40));
 
         jPanel4.setBackground(new java.awt.Color(51, 204, 255));
@@ -74,7 +74,7 @@ public class JFrameInicio extends javax.swing.JFrame {
         jLabel3.setText("Transacciones y mas");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 5, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/WhatsApp Image 2024-03-20 at 01.44.18.jpeg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/fondoImagen.jpeg"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 0, 506, 40));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 60));

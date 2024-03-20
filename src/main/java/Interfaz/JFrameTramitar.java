@@ -58,7 +58,7 @@ public class JFrameTramitar extends javax.swing.JFrame {
         jPanel2.setMaximumSize(new java.awt.Dimension(600, 60));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_secretarias_bn (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sonoraLogoImagen.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 94, 40));
 
         jPanel4.setBackground(new java.awt.Color(51, 204, 255));
@@ -70,7 +70,7 @@ public class JFrameTramitar extends javax.swing.JFrame {
         jLabel4.setText("Transacciones y mas");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 5, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/WhatsApp Image 2024-03-20 at 01.44.18.jpeg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/fondoImagen.jpeg"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 0, 506, 40));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -87,11 +87,10 @@ public class JFrameTramitar extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("¿Que desea tramitar?");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Imagegen (2).jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/licenciaImagen.jpg"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -99,7 +98,7 @@ public class JFrameTramitar extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 126, 90));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Imagegen (1) (1).jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/placaImagen.jpg"))); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -110,7 +109,6 @@ public class JFrameTramitar extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setForeground(new java.awt.Color(153, 153, 153));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Placas");
 
@@ -137,7 +135,6 @@ public class JFrameTramitar extends javax.swing.JFrame {
         jPanel5.setForeground(new java.awt.Color(153, 153, 153));
 
         jLabel9.setBackground(new java.awt.Color(102, 0, 255));
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Licencias");
         jLabel9.setToolTipText("");
