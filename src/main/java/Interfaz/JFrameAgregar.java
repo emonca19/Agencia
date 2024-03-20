@@ -27,116 +27,23 @@ public class JFrameAgregar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnInicio = new javax.swing.JButton();
-        btnHistorial = new javax.swing.JButton();
-        btnTramite = new javax.swing.JButton();
-        btnAgregarVehiculo = new javax.swing.JButton();
-        btnAgregarPersona = new javax.swing.JButton();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/2.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -4, 900, 510));
-
-        btnInicio.setText("jButton3");
-        btnInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 170, 90));
-
-        btnHistorial.setText("jButton1");
-        btnHistorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHistorialActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 170, 100));
-
-        btnTramite.setText("jButton2");
-        btnTramite.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTramiteActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnTramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 170, 100));
-
-        btnAgregarVehiculo.setText("jButton1");
-        btnAgregarVehiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarVehiculoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAgregarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 180, 180));
-
-        btnAgregarPersona.setText("jButton1");
-        btnAgregarPersona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarPersonaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAgregarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 170, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 506, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        // TODO add your handling code here:
-        JFrameInicio inicio = new JFrameInicio();
-        inicio.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnInicioActionPerformed
-
-    private void btnTramiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTramiteActionPerformed
-        // TODO add your handling code here:
-        JFrameTramitar tramite = new JFrameTramitar();
-        tramite.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnTramiteActionPerformed
-
-    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
-        // TODO add your handling code here:
-        JFrameHistorial historial = new JFrameHistorial();
-        historial.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnHistorialActionPerformed
-
-    private void btnAgregarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonaActionPerformed
-        // TODO add your handling code here:
-        JFrameAgregarPersona registrarPersona = new JFrameAgregarPersona();
-        registrarPersona.setVisible(true);
-    }//GEN-LAST:event_btnAgregarPersonaActionPerformed
-
-    private void btnAgregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVehiculoActionPerformed
-        // TODO add your handling code here:
-        JFrameAgregarVehiculo registrarVehiculo= new JFrameAgregarVehiculo();
-        registrarVehiculo.setVisible(true);
-    }//GEN-LAST:event_btnAgregarVehiculoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarPersona;
-    private javax.swing.JButton btnAgregarVehiculo;
-    private javax.swing.JButton btnHistorial;
-    private javax.swing.JButton btnInicio;
-    private javax.swing.JButton btnTramite;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
