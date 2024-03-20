@@ -4,6 +4,8 @@
  */
 package Interfaz;
 
+import controlador.Tipo;
+
 /**
  *
  * @author elimo
@@ -43,7 +45,7 @@ public class JFrameInicio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnTransaccion = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -98,14 +100,24 @@ public class JFrameInicio extends javax.swing.JFrame {
         jButton2.setText("Persona");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 105, 25));
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setForeground(new java.awt.Color(51, 102, 255));
-        jButton3.setText("Transaccion");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 105, 25));
+        btnTransaccion.setBackground(new java.awt.Color(204, 204, 204));
+        btnTransaccion.setForeground(new java.awt.Color(51, 102, 255));
+        btnTransaccion.setText("Transaccion");
+        btnTransaccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTransaccionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnTransaccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 105, 25));
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setForeground(new java.awt.Color(51, 102, 255));
         jButton4.setText("Historial");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 105, 25));
 
         jButton5.setBackground(new java.awt.Color(204, 204, 204));
@@ -127,6 +139,24 @@ public class JFrameInicio extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnTransaccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransaccionActionPerformed
+        // TODO add your handling code here:
+        
+        JFrameTramitar tramitar = new JFrameTramitar();
+        tramitar.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btnTransaccionActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+        JFrameBuscar buscar = new JFrameBuscar();
+        buscar.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -164,9 +194,9 @@ public class JFrameInicio extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnTransaccion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
