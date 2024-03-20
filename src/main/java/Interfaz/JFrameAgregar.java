@@ -51,6 +51,11 @@ public class JFrameAgregar extends javax.swing.JFrame {
         jPanel1.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 170, 90));
 
         btnHistorial.setText("jButton1");
+        btnHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistorialActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 170, 100));
 
         btnTramite.setText("jButton2");
@@ -62,9 +67,19 @@ public class JFrameAgregar extends javax.swing.JFrame {
         jPanel1.add(btnTramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 170, 100));
 
         btnAgregarVehiculo.setText("jButton1");
+        btnAgregarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarVehiculoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAgregarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 180, 180));
 
         btnAgregarPersona.setText("jButton1");
+        btnAgregarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarPersonaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAgregarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 170, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,7 +110,25 @@ public class JFrameAgregar extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnTramiteActionPerformed
 
-    
+    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
+        // TODO add your handling code here:
+        JFrameHistorial historial = new JFrameHistorial();
+        historial.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHistorialActionPerformed
+
+    private void btnAgregarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonaActionPerformed
+        // TODO add your handling code here:
+        JFrameAgregarPersona registrarPersona = new JFrameAgregarPersona();
+        registrarPersona.setVisible(true);
+    }//GEN-LAST:event_btnAgregarPersonaActionPerformed
+
+    private void btnAgregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVehiculoActionPerformed
+        // TODO add your handling code here:
+        JFrameAgregarVehiculo registrarVehiculo= new JFrameAgregarVehiculo();
+        registrarVehiculo.setVisible(true);
+    }//GEN-LAST:event_btnAgregarVehiculoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarPersona;

@@ -47,6 +47,11 @@ public class JFrameTramitar extends javax.swing.JFrame {
         jPanel2.add(btnTramitarLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 180, 180));
 
         btnHistorial.setText("jButton1");
+        btnHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistorialActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 170, 90));
 
         btnAgregar.setText("jButton2");
@@ -106,6 +111,13 @@ public class JFrameTramitar extends javax.swing.JFrame {
         inicio.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnInicioActionPerformed
+
+    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
+        // TODO add your handling code here:
+        JFrameHistorial historial = new JFrameHistorial();
+      historial.setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_btnHistorialActionPerformed
 
     
 
