@@ -4,6 +4,7 @@
  */
 package main;
 
+import DTO.PersonaGeneradaDTO;
 import DTO.PersonaNuevaDTO;
 import Entidades.LicenciaEntidad;
 import Entidades.PersonaEntidad;
@@ -38,9 +39,27 @@ public class NewMain {
         em.getTransaction().begin();
         
         IConvertidor convertidor = new EntityToDTO();
-//        PersonaNuevaDTO personaNDTO = new PersonaNuevaDTO
-//        convertidor.DTOToEntidad(PersonaNuevaDTO personaNDTO, PersonaEntidad personaEntidad);
-        convertidor.entityToDTO(em, em);
+//        Calendar fechaNacimiento = Calendar.getInstance();
+//        fechaNacimiento.set(2004, 3, 9);
+//        PersonaNuevaDTO personaNDTO = new PersonaNuevaDTO(fechaNacimiento, "SJSHKASDUH", "64426211690", "AMOS", "OLGUIN", "QUIROZ");
+//        PersonaEntidad personaEntidad = new PersonaEntidad();
+//        personaEntidad = convertidor.DTOToEntidad(personaNDTO, personaEntidad);
+        
+        Long id = 1L;
+        PersonaEntidad personaEntidad = em.find(PersonaEntidad.class, id);
+        PersonaGeneradaDTO personaGDTO = new PersonaGeneradaDTO();
+        System.out.println(personaEntidad.getNombres());
+        personaGDTO = convertidor.entityToDTO(personaEntidad, personaGDTO);
+
+        if (personaGDTO == null) {
+            
+            System.out.println("No se pudo agregar");
+            
+        }else{
+            
+            System.out.println(personaGDTO.getNombre());
+            
+        }
         
         em.getTransaction().commit();
         em.close();
