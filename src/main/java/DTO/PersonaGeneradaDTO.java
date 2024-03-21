@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class PersonaGeneradaDTO {
     
+    private Long idPersona;
     private String rfc;
     private String nombre;
     private String apellidoPaterno;
@@ -11,19 +12,28 @@ public class PersonaGeneradaDTO {
     private Calendar fechaNacimiento;
     private String telefono;
 
-    public PersonaGeneradaDTO(String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Calendar fechaNacimiento, String telefono) {
-     
+    public PersonaGeneradaDTO() {
+    }
+
+    public PersonaGeneradaDTO(Long idPersona, String rfc, String nombre, String apellidoPaterno, String apellidoMaterno, Calendar fechaNacimiento, String telefono) {
+        
+        this.idPersona = idPersona;
         this.rfc = rfc;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.fechaNacimiento = fechaNacimiento;
         this.telefono = telefono;
+        
     }
 
-    public PersonaGeneradaDTO() {
+    public Long getIdPersona() {
+        return idPersona;
     }
 
+    public void setIdPersona(Long idPersona) {
+        this.idPersona = idPersona;
+    }
     
     public String getRfc() {
         return rfc;
@@ -77,7 +87,8 @@ public class PersonaGeneradaDTO {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("PersonaGeneradaDTO{");
-        sb.append("rfc=").append(rfc);
+        sb.append("idPersona=").append(idPersona);
+        sb.append(", rfc=").append(rfc);
         sb.append(", nombre=").append(nombre);
         sb.append(", apellidoPaterno=").append(apellidoPaterno);
         sb.append(", apellidoMaterno=").append(apellidoMaterno);
@@ -86,5 +97,7 @@ public class PersonaGeneradaDTO {
         sb.append('}');
         return sb.toString();
     }
+
+    
 
 }
