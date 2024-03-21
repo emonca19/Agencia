@@ -25,9 +25,6 @@ public class PersonaEntidad implements Serializable {
     @Column(name="idPersona")
     private Long idPersona;
 
-    @Column(name = "curp", nullable = false, length = 18)
-    private String curp;
-
     @Column(name = "fechaNacimiento", nullable = false)
     @Temporal(TemporalType.DATE)
     private Calendar fechaNacimiento;
@@ -72,8 +69,7 @@ public class PersonaEntidad implements Serializable {
     public PersonaEntidad() {
     }
 
-    public PersonaEntidad(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
-        this.curp = curp;
+    public PersonaEntidad(Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;
         this.telefono = telefono;
@@ -144,14 +140,6 @@ public class PersonaEntidad implements Serializable {
 
     public Long getIdPersona() {
         return idPersona;
-    }
-
-    public String getCurp() {
-        return curp;
-    }
-
-    public void setCurp(String curp) {
-        this.curp = curp;
     }
     
     public String getRfc() {
@@ -230,9 +218,6 @@ public class PersonaEntidad implements Serializable {
             return false;
         }
         final PersonaEntidad other = (PersonaEntidad) obj;
-        if (!Objects.equals(this.curp, other.curp)) {
-            return false;
-        }
         if (!Objects.equals(this.rfc, other.rfc)) {
             return false;
         }
@@ -270,7 +255,6 @@ public class PersonaEntidad implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("ClienteEntidad{");
         sb.append("idCliente=").append(idPersona);
-        sb.append(", curp=").append(curp);
         sb.append(", fechaNacimiento=").append(fechaNacimiento);
         sb.append(", rfc=").append(rfc);
         sb.append(", telefono=").append(telefono);
