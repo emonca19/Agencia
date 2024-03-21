@@ -8,6 +8,10 @@ package Interfaces;
  *
  * @author lv1822
  */
-public interface IEntotyToDTO {
+public interface IConvertidor {
+    
+    public <Entity, DTO> Entity DTOToEntidad(DTO dto, Entity entity);
+    
+    public <Entity, DTO> DTO entityToDTO(Entity entity, DTO dto);
     
 }
