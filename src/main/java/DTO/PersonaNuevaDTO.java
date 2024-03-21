@@ -12,8 +12,7 @@ import java.util.Calendar;
  */
 public class PersonaNuevaDTO {
     
-    private Long idCliente;
-    private String curp;
+    private Long idPersona;
     private Calendar fechaNacimiento;
     private String rfc;
     private String telefono;
@@ -24,28 +23,8 @@ public class PersonaNuevaDTO {
     public PersonaNuevaDTO() {
     }
 
-    public PersonaNuevaDTO(Long idCliente, String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
-        this.idCliente = idCliente;
-        this.curp = curp;
-        this.fechaNacimiento = fechaNacimiento;
-        this.rfc = rfc;
-        this.telefono = telefono;
-        this.nombres = nombres;
-        this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
-    }
-
-    public PersonaNuevaDTO(String curp, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
-        this.curp = curp;
-        this.fechaNacimiento = fechaNacimiento;
-        this.rfc = rfc;
-        this.telefono = telefono;
-        this.nombres = nombres;
-        this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
-    }
-
-    public PersonaNuevaDTO(Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+    public PersonaNuevaDTO(Long idPersona, Calendar fechaNacimiento, String rfc, String telefono, String nombres, String apellidoPaterno, String apellidoMaterno) {
+        this.idPersona = idPersona;
         this.fechaNacimiento = fechaNacimiento;
         this.rfc = rfc;
         this.telefono = telefono;
@@ -54,23 +33,12 @@ public class PersonaNuevaDTO {
         this.apellidoMaterno = apellidoMaterno;
     }
     
-    
-    
-
     public Long getIdCliente() {
-        return idCliente;
+        return idPersona;
     }
 
     public void setIdCliente(Long idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public String getCurp() {
-        return curp;
-    }
-
-    public void setCurp(String curp) {
-        this.curp = curp;
+        this.idPersona = idCliente;
     }
 
     public Calendar getFechaNacimiento() {
@@ -125,8 +93,7 @@ public class PersonaNuevaDTO {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("PersonaNuevaDTO{");
-        sb.append("idCliente=").append(idCliente);
-        sb.append(", curp=").append(curp);
+        sb.append("idCliente=").append(idPersona);
         sb.append(", fechaNacimiento=").append(fechaNacimiento);
         sb.append(", rfc=").append(rfc);
         sb.append(", telefono=").append(telefono);
