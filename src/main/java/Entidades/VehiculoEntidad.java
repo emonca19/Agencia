@@ -39,9 +39,6 @@ public class VehiculoEntidad implements Serializable {
     @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.PERSIST})
     private List <PlacaEntidad> placas;
     
-    @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE})
-    private List<VehiculoTieneCliente> vehiculoCliente;
-    
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idPersona")
     private PersonaEntidad persona;
@@ -57,47 +54,6 @@ public class VehiculoEntidad implements Serializable {
         this.numSerie = numSerie;
     }
 
-    public PersonaEntidad getPersona() {
-        return persona;
-    }
-
-    public void setPersona(PersonaEntidad persona) {
-        this.persona = persona;
-    }
-    
-    public Long getIdVehiculo() {
-        return idVehiculo;
-    }
-
-    public List<PlacaEntidad> getPlacas() {
-        return placas;
-    }
-
-    public void setPlacas(List<PlacaEntidad> placas) {
-        this.placas = placas;
-    }
-
-    public List<VehiculoTieneCliente> getVehiculoCliente() {
-        return vehiculoCliente;
-    }
-
-    public void setVehiculoCliente(List<VehiculoTieneCliente> vehiculoCliente) {
-        this.vehiculoCliente = vehiculoCliente;
-    }
-
-    public void setIdVehiculo(Long idVehiculo) {
-        this.idVehiculo = idVehiculo;
-    }
-
-    public List<PlacaEntidad> getPlaca() {
-        return placas;
-    }
-
-    public void setPlaca(List<PlacaEntidad> placas) {
-        this.placas = placas;
-    }
-
-    
     public String getColor() {
         return color;
     }
@@ -138,15 +94,23 @@ public class VehiculoEntidad implements Serializable {
         this.numSerie = numSerie;
     }
 
-   
-
-    public Long getId() {
-        return idVehiculo;
+    public List<PlacaEntidad> getPlacas() {
+        return placas;
     }
 
-    public void setId(Long idVehiculo) {
-        this.idVehiculo = idVehiculo;
+    public void setPlacas(List<PlacaEntidad> placas) {
+        this.placas = placas;
     }
+
+    public PersonaEntidad getPersona() {
+        return persona;
+    }
+
+    public void setPersona(PersonaEntidad persona) {
+        this.persona = persona;
+    }
+
+    
 
     @Override
     public String toString() {
@@ -159,7 +123,6 @@ public class VehiculoEntidad implements Serializable {
         sb.append(", modelo=").append(modelo);
         sb.append(", numSerie=").append(numSerie);
         sb.append(", placas=").append(placas);
-        sb.append(", vehiculoCliente=").append(vehiculoCliente);
         sb.append(", persona=").append(persona);
         sb.append('}');
         return sb.toString();
