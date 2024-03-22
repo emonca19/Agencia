@@ -17,7 +17,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class TramiteEntidad implements Serializable {
 
     @Id
@@ -28,9 +28,6 @@ public class TramiteEntidad implements Serializable {
     @Column(name = "costo", nullable = false)
     private int costo;
     
-    @Column(name = "tipoTramite", nullable = false)
-    private int tipoTramite;
-    
     @Column(name = "fechaTramite", nullable = false)
     @Temporal(TemporalType.DATE)
     private Calendar fechaTramite;
@@ -38,16 +35,13 @@ public class TramiteEntidad implements Serializable {
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name = "idPersona")
     private PersonaEntidad persona;
-
-    
     
     public TramiteEntidad() {
     }
 
-    public TramiteEntidad(int costo, int tipoTramite, Calendar fechaTramite, PersonaEntidad persona) {
+    public TramiteEntidad(int costo, Calendar fechaTramite, PersonaEntidad persona) {
         
         this.costo = costo;
-        this.tipoTramite = tipoTramite;
         this.fechaTramite = fechaTramite;
         this.persona = persona;
     }
@@ -58,14 +52,6 @@ public class TramiteEntidad implements Serializable {
 
     public void setCosto(int costo) {
         this.costo = costo;
-    }
-
-    public int getTipoTramite() {
-        return tipoTramite;
-    }
-
-    public void setTipoTramite(int tipoTramite) {
-        this.tipoTramite = tipoTramite;
     }
 
     public Calendar getFechaTramite() {
@@ -112,7 +98,6 @@ public class TramiteEntidad implements Serializable {
         sb.append("TramiteEntidad{");
         sb.append("id=").append(id);
         sb.append(", costo=").append(costo);
-        sb.append(", tipoTramite=").append(tipoTramite);
 //        sb.append(", tipoCobro=").append(tipoCobro);
         sb.append(", fechaNacimiento=").append(fechaTramite);
         sb.append(", cliente=").append(persona);
