@@ -8,6 +8,8 @@ import Entidades.PersonaEntidad;
 import excepciones.PersistenciaException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -35,22 +37,20 @@ public class PersonaDAO implements IPersonaDAO {
     }
 
     @Override
-    public PersonaEntidad agregarPersona(PersonaEntidad personaEntidad) {
+    public PersonaEntidad agregarPersona(PersonaEntidad personaEntidad) throws PersistenciaException{
 
-         try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(personaEntidad);
-            entityManager.getTransaction().commit();
-
-        } catch (PersistenciaException e) {
-            if (entityManager.getTransaction().isActive()) {
-                entityManager.getTransaction().rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            entityManager.close();
+        try {
+            
+            IPersistirDAO persistirDAO = new PersistirDAO();
+            persistirDAO.persistirEntidad(personaEntidad);
+            return personaEntidad;
+            
+        } catch (SQLException ex) {
+            
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+            
         }
-        return null;
 
     }
 
