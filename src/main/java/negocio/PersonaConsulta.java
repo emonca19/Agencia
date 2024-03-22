@@ -89,8 +89,8 @@ public class PersonaConsulta {
         Calendar fechaNacimiento = Calendar.getInstance();
         fechaNacimiento.set(2004, 3, 1);
         for(int i = 0; i < 20; i ++){
-            fechaNacimiento.add(Calendar.DAY_OF_MONTH, i);
-            PersonaNuevaDTO personaNueva = new PersonaNuevaDTO(fechaNacimiento, "ABD02" + i, "64426211" + i, "Nombre numero " + i, "Apellido paterno " + i, "Apellido materno " + i);
+            fechaNacimiento.add(Calendar.DAY_OF_MONTH, 1);
+            PersonaNuevaDTO personaNueva = new PersonaNuevaDTO(fechaNacimiento, "ABD02" + (i + 1), "64426211" + (i + 1), "Nombre numero " + (i + 1), "Apellido paterno " + (i + 1), "Apellido materno " + (i + 1));
             agregarPersona(personaNueva);
             
         }
