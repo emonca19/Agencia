@@ -42,8 +42,17 @@ public class PersonaDAO implements IPersonaDAO {
         try {
             
             IPersistirDAO persistirDAO = new PersistirDAO();
-            persistirDAO.persistirEntidad(personaEntidad);
-            return personaEntidad;
+            boolean respuesta = persistirDAO.persistirEntidad(personaEntidad);
+            if(respuesta){
+                
+                return personaEntidad;
+            
+            }else{
+                
+                System.out.println("no entró");
+                return null;
+                
+            }
             
         } catch (SQLException ex) {
             
