@@ -12,8 +12,7 @@ import Entidades.PlacaEntidad;
 import Entidades.TramiteEntidad;
 import Entidades.VehiculoEntidad;
 import Entidades.VehiculoTieneCliente;
-import Interfaces.IConvertidor;
-import Persistencia.EntityToDTO;
+import modificadores.Convertidor;
 import Persistencia.LicenciaDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -79,7 +78,7 @@ public class NewMain {
         
         
 //PERSISTIR CAMBIOS DE ENTITY Y DTO
-//        IConvertidor convertidor = new EntityToDTO();
+//        IConvertidor convertidor = new Convertidor();
 //        Calendar fechaNacimiento = Calendar.getInstance();
 //        fechaNacimiento.set(2004, 3, 9);
 //        PersonaNuevaDTO personaNDTO = new PersonaNuevaDTO(fechaNacimiento, "SJSHKASDUH", "64426211690", "AMOS", "OLGUIN", "QUIROZ");
