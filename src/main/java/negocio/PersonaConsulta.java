@@ -74,7 +74,7 @@ public class PersonaConsulta {
         
         Convertidor convertidor = new Convertidor();
         PersonaEntidad personaEntidad = convertidor.DTOToEntidad(personaNuevaDTO, new PersonaEntidad());
-        personaEntidad = personaDAO.agregarPersona(personaEntidad);
+        personaDAO.agregarPersona(personaEntidad);
         PersonaGeneradaDTO personaGeneradaDTO = convertidor.entityToDTO(personaEntidad, new PersonaGeneradaDTO());
         return personaGeneradaDTO;
         

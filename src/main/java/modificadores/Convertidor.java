@@ -63,7 +63,13 @@ public class Convertidor{
                 Object valorCampoEntity = campoEntity.get(entity);
 
                 // Obtener el campo correspondiente en la entidad
+                
                 Field campoDTO = clasesDTO.getDeclaredField(nombreCampoEntity);
+                if(valorCampoEntity != campoDTO){
+                    
+                    break;
+                    
+                }
                 campoDTO.setAccessible(true); // Hacer accesible el campo incluso si es privado
 
                 // Establecer el valor del campo en la entidad
