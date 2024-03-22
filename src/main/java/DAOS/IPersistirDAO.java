@@ -10,6 +10,6 @@ package DAOS;
  */
 public interface IPersistirDAO {
     
-    <Entidad> boolean persistirEntidad(Entidad entidad);
+    public <Entidad> boolean persistirEntidad(Entidad entidad);
     
 }

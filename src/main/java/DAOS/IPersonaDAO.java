@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface IPersonaDAO {
     
-    public PersonaEntidad agregarPersona(PersonaNuevaDTO persona);
+    public PersonaEntidad agregarPersona(PersonaEntidad personaEntidad);
     
     public PersonaEntidad buscarPorId(Long id);
     

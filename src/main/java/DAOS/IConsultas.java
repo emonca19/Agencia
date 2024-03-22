@@ -15,8 +15,8 @@ import java.util.List;
  */
 public interface IConsultas {
     
-    List<LicenciaEntidad> buscarLicenciasPorCriterios(PersonaNuevaDTO pacienteNuevoDTO);
+    List<LicenciaEntidad> buscarLicenciasPorCriterios(LicenciaEntidad licenciaEntidad);
     
-    List<PlacaEntidad> buscarPlacasPorCriterios(PersonaNuevaDTO personaNuevoDTO);
+    List<PlacaEntidad> buscarPlacasPorCriterios(PlacaEntidad placaEntidad);
     
 }

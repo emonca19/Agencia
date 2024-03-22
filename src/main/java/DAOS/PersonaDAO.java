@@ -38,11 +38,11 @@ public class PersonaDAO implements IPersonaDAO {
     }
 
     @Override
-    public PersonaEntidad agregarPersona(PersonaNuevaDTO persona) {
+    public PersonaEntidad agregarPersona(PersonaEntidad personaEntidad) {
 
          try {
             entityManager.getTransaction().begin();
-            entityManager.persist(persona);
+            entityManager.persist(personaEntidad);
             entityManager.getTransaction().commit();
 
         } catch (PersistenciaException e) {

@@ -15,9 +15,7 @@ import java.util.List;
  */
 public interface ILicenciaDAO {
     
-    void guardarLicenciaBD(LicenciaEntidad licencia);
-    
-    
+    void guardarLicenciaBD(LicenciaEntidad licenciaEntidad);
     List<LicenciaEntidad> buscarLicenciasPorNombre(String nombre);
     List<LicenciaEntidad> buscarLicenciaPorCURP(String curp);
     List<LicenciaEntidad> buscarLicenciasPorFechaNacimiento(Calendar fechaNacimiento);

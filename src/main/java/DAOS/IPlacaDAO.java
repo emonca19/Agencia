@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface IPlacaDAO {
     
-    void guardarPlaca(PlacaEntidad placa);
+    void guardarPlaca(PlacaEntidad placaEntidad);
     
     PlacaEntidad buscarPlacaPorNumero(String numero);
     
