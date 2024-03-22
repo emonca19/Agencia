@@ -32,10 +32,14 @@ public class Convertidor{
                 String nombreCampoDto = campoDTO.getName();
                 campoDTO.setAccessible(true);
                 Object valorCampoDto = campoDTO.get(dto);
-                Field campoEntity = claseEntity.getDeclaredField(nombreCampoDto);
-                campoEntity.setAccessible(true);
-                campoEntity.set(entity, valorCampoDto);
-            } catch (NoSuchFieldException | IllegalAccessException e) {
+                try{
+                    Field campoEntity = claseEntity.getDeclaredField(nombreCampoDto);
+                    campoEntity.setAccessible(true);
+                    campoEntity.set(entity, valorCampoDto);
+                }catch(NoSuchFieldException nse){
+                    System.out.println("El campo " + nombreCampoDto + " no existe en el DTO.");
+                }
+            } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
@@ -64,16 +68,14 @@ public class Convertidor{
                 String nombreCampoEntity = campoEntity.getName();
                 campoEntity.setAccessible(true);
                 Object valorCampoEntity = campoEntity.get(entity);
-                Field campoDTO = clasesDTO.getDeclaredField(nombreCampoEntity);
-                if(valorCampoEntity != campoDTO){
-                    
-                    break;
-                    
+                try {
+                    Field campoDTO = clasesDTO.getDeclaredField(nombreCampoEntity);
+                    campoDTO.setAccessible(true);
+                    campoDTO.set(dto, valorCampoEntity);
+                } catch (NoSuchFieldException e) {
+                    System.out.println("El campo " + nombreCampoEntity + " no existe en el DTO.");
                 }
-                campoDTO.setAccessible(true);
-                campoDTO.set(dto, valorCampoEntity);
-                
-            } catch (NoSuchFieldException | IllegalAccessException e) {
+            } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
         }

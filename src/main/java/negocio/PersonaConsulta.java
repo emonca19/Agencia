@@ -8,7 +8,9 @@ import DAOS.IPersonaDAO;
 import DAOS.PersonaDAO;
 import DTO.PersonaGeneradaDTO;
 import DTO.PersonaNuevaDTO;
+import DTO.VehiculoDTO;
 import Entidades.PersonaEntidad;
+import Entidades.VehiculoEntidad;
 import java.util.Calendar;
 import java.util.List;
 import modificadores.Convertidor;
@@ -74,7 +76,7 @@ public class PersonaConsulta {
         
         Convertidor convertidor = new Convertidor();
         PersonaEntidad personaEntidad = convertidor.DTOToEntidad(personaNuevaDTO, new PersonaEntidad());
-        personaDAO.agregarPersona(personaEntidad);
+        personaEntidad = personaDAO.agregarPersona(personaEntidad);
         PersonaGeneradaDTO personaGeneradaDTO = convertidor.entityToDTO(personaEntidad, new PersonaGeneradaDTO());
         return personaGeneradaDTO;
         
@@ -95,6 +97,22 @@ public class PersonaConsulta {
             
         }
         
+    }
+    
+    /**
+     * Metodo que agrega un vehiculo a la lista de vehiculos de una persona
+     * @param vehiculoDTO
+     * @param personaEntidad
+     * @return persona generada con el vehiculo en su lista
+     */
+    public PersonaGeneradaDTO agregarVehiculo(VehiculoDTO vehiculoDTO, PersonaEntidad personaEntidad){
+        
+        Convertidor convertidor = new Convertidor();
+        VehiculoEntidad vehiculoEntidad = convertidor.DTOToEntidad(vehiculoDTO, new VehiculoEntidad());
+        PersonaDAO personaDAO = new PersonaDAO();
+        personaEntidad = personaDAO.agregarVehiculo(vehiculoEntidad, personaEntidad);
+        PersonaGeneradaDTO personaGeneradaDTO = convertidor.entityToDTO(personaEntidad, new PersonaGeneradaDTO());
+        return personaGeneradaDTO;
     }
     
 }
