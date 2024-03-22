@@ -4,7 +4,6 @@
  */
 package DAOS;
 
-import DTO.PersonaNuevaDTO;
 import Entidades.PersonaEntidad;
 import java.util.List;
 

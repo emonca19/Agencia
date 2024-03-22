@@ -4,15 +4,12 @@
  */
 package main;
 
-import DTO.PersonaGeneradaDTO;
-import DTO.PersonaNuevaDTO;
 import Entidades.LicenciaEntidad;
 import Entidades.PersonaEntidad;
 import Entidades.PlacaEntidad;
 import Entidades.TramiteEntidad;
 import Entidades.VehiculoEntidad;
 import Entidades.VehiculoTieneCliente;
-import modificadores.Convertidor;
 import DAOS.LicenciaDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
