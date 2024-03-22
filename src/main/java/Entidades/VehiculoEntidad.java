@@ -110,6 +110,9 @@ public class VehiculoEntidad implements Serializable {
         this.persona = persona;
     }
 
+    public Long getIdVehiculo() {
+        return idVehiculo;
+    }
     
 
     @Override
