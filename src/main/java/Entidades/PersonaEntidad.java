@@ -51,20 +51,8 @@ public class PersonaEntidad implements Serializable {
     @OneToMany(mappedBy = "persona", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     private List<TramiteEntidad> tramites;
     
-//    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-//    private List<TramiteEntidad> tramites;
-//    
-//    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-//    private List<PlacaEntidad> placas;
-//    
-//    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-//    private List<LicenciaEntidad> licencias;
-    
     @OneToMany(mappedBy = "persona", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<VehiculoTieneCliente> vehiculoCliente;
-    
-    
-
+    private List<VehiculoEntidad> vehiculo;
 
     public PersonaEntidad() {
     }
@@ -76,10 +64,6 @@ public class PersonaEntidad implements Serializable {
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
-//        this.tramites = tramites;
-//        this.placas = placas;
-//        this.licencias = licencias;
-//        this.vehiculoCliente = vehiculoCliente;
     }
 
     public String getApellidoPaterno() {
@@ -106,22 +90,6 @@ public class PersonaEntidad implements Serializable {
         this.licencia = licencia;
     }
 
-//    public List<PlacaEntidad> getPlacas() {
-//        return placas;
-//    }
-//
-//    public void setPlacas(List<PlacaEntidad> placas) {
-//        this.placas = placas;
-//    }
-//
-//    public List<LicenciaEntidad> getLicencias() {
-//        return licencias;
-//    }
-//
-//    public void setLicencias(List<LicenciaEntidad> licencias) {
-//        this.licencias = licencias;
-//    }
-
     public List<TramiteEntidad> getTramites() {
         return tramites;
     }
@@ -130,12 +98,12 @@ public class PersonaEntidad implements Serializable {
         this.tramites = tramites;
     }
     
-    public List<VehiculoTieneCliente> getVehiculoCliente() {
-        return vehiculoCliente;
+    public List<VehiculoEntidad> getVehiculoCliente() {
+        return vehiculo;
     }
 
-    public void setVehiculoCliente(List<VehiculoTieneCliente> vehiculoCliente) {
-        this.vehiculoCliente = vehiculoCliente;
+    public void setVehiculoCliente(List<VehiculoEntidad> vehiculo) {
+        this.vehiculo = vehiculo;
     }
 
     public Long getIdPersona() {
@@ -191,14 +159,6 @@ public class PersonaEntidad implements Serializable {
         this.apellidoMaterno = apellido_materno;
     }
 
-//    public List<TramiteEntidad> getTramites() {
-//        return tramites;
-//    }
-//
-//    public void setTramites(List<TramiteEntidad> tramites) {
-//        this.tramites = tramites;
-//    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -245,7 +205,7 @@ public class PersonaEntidad implements Serializable {
         if (!Objects.equals(this.tramites, other.tramites)) {
             return false;
         }
-        return Objects.equals(this.vehiculoCliente, other.vehiculoCliente);
+        return Objects.equals(this.vehiculo, other.vehiculo);
     }
 
     
@@ -262,10 +222,7 @@ public class PersonaEntidad implements Serializable {
         sb.append(", nombres=").append(nombres);
         sb.append(", apellidoPaterno=").append(apellidoPaterno);
         sb.append(", apellidoMaterno=").append(apellidoMaterno);
-//        sb.append(", tramites=").append(tramites);
-//        sb.append(", placas=").append(placas);
-//        sb.append(", licencias=").append(licencias);
-        sb.append(", vehiculoCliente=").append(vehiculoCliente);
+        sb.append(", vehiculoCliente=").append(vehiculo);
         sb.append('}');
         return sb.toString();
     }

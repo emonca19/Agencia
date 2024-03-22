@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
@@ -34,14 +36,15 @@ public class VehiculoEntidad implements Serializable {
     @Column(name = "numSerie", nullable = false)
     private int numSerie;
     
-    /**
-     * 
-     */
     @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.PERSIST})
     private List <PlacaEntidad> placas;
     
     @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.MERGE})
     private List<VehiculoTieneCliente> vehiculoCliente;
+    
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @JoinColumn(name = "idPersona")
+    private PersonaEntidad persona;
 
     public VehiculoEntidad() {
     }
@@ -52,10 +55,15 @@ public class VehiculoEntidad implements Serializable {
         this.marca = marca;
         this.modelo = modelo;
         this.numSerie = numSerie;
-//        this.placas = placas;
-//        this.vehiculoCliente = vehiculoCliente;
     }
 
+    public PersonaEntidad getPersona() {
+        return persona;
+    }
+
+    public void setPersona(PersonaEntidad persona) {
+        this.persona = persona;
+    }
     
     public Long getIdVehiculo() {
         return idVehiculo;
@@ -76,8 +84,6 @@ public class VehiculoEntidad implements Serializable {
     public void setVehiculoCliente(List<VehiculoTieneCliente> vehiculoCliente) {
         this.vehiculoCliente = vehiculoCliente;
     }
-
-    
 
     public void setIdVehiculo(Long idVehiculo) {
         this.idVehiculo = idVehiculo;
@@ -142,33 +148,6 @@ public class VehiculoEntidad implements Serializable {
         this.idVehiculo = idVehiculo;
     }
 
-//    @Override
-//    public int hashCode() {
-//        int hash = 0;
-//        hash += (idVehiculo != null ? idVehiculo.hashCode() : 0);
-//        return hash;
-//    }
-//
-//    @Override
-//    public boolean equals(Object object) {
-//        // TODO: Warning - this method won't work in the case the id fields are not set
-//        if (!(object instanceof VehiculoEntidad)) {
-//            return false;
-//        }
-//        VehiculoEntidad other = (VehiculoEntidad) object;
-//        if ((this.idVehiculo == null && other.idVehiculo!= null) || (this.idVehiculo != null && !this.idVehiculo.equals(other.idVehiculo))) {
-//            return false;
-//        }
-//        return true;
-//    }
-
-    
-    
-//    @Override
-//    public String toString() {
-//        return "Entidad.VehiculoEntidad[ id=" + idVehiculo + " ]";
-//    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,8 +159,12 @@ public class VehiculoEntidad implements Serializable {
         sb.append(", modelo=").append(modelo);
         sb.append(", numSerie=").append(numSerie);
         sb.append(", placas=").append(placas);
+        sb.append(", vehiculoCliente=").append(vehiculoCliente);
+        sb.append(", persona=").append(persona);
         sb.append('}');
         return sb.toString();
     }
+    
+    
 
 }
