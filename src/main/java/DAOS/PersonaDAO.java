@@ -4,13 +4,17 @@
  */
 package DAOS;
 
+import Entidades.LicenciaEntidad;
 import Entidades.PersonaEntidad;
+import Entidades.VehiculoEntidad;
 import excepciones.PersistenciaException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -48,7 +52,7 @@ public class PersonaDAO implements IPersonaDAO {
         try {
             
             IPersistirDAO persistirDAO = new PersistirDAO();
-            boolean respuesta = persistirDAO.persistirEntidad(personaEntidad);
+            persistirDAO.persistirEntidad(personaEntidad);
             return personaEntidad;
             
         } catch (SQLException ex) {
@@ -120,6 +124,51 @@ public class PersonaDAO implements IPersonaDAO {
         return listaPersonas;
         
     }
+
+    @Override
+    public PersonaEntidad actualizarPersona(PersonaEntidad personaEntidad){
+        
+        EntityTransaction transaction = null;
+        
+        try {
+            
+            transaction = entityManager.getTransaction();
+            transaction.begin();
+            entityManager.merge(personaEntidad);
+            transaction.commit();
+            return personaEntidad;
+            
+        } catch (PersistenciaException ex) {
+            
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback();
+            }
+            
+            return null;
+            
+        }
+    }
+    
+    @Override
+    public PersonaEntidad agregarVehiculo(VehiculoEntidad vehiculoEntidad, PersonaEntidad personEntidad) {
+        
+        List<VehiculoEntidad> listaVehiculos = new ArrayList<>();
+        listaVehiculos.add(vehiculoEntidad);
+        personEntidad.setVehiculoCliente(listaVehiculos);
+        vehiculoEntidad.setPersona(personEntidad);
+        entityManager.merge(personEntidad);
+        return personEntidad;
+        
+    }
+
+    @Override
+    public PersonaEntidad agregarLicencia(LicenciaEntidad licenciaEntidad, PersonaEntidad personEntidad) {
+    
+        return null;
+        
+    }
+    
+    
     
     
     

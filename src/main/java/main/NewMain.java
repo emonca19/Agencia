@@ -4,6 +4,7 @@
  */
 package main;
 
+import DAOS.IPersonaDAO;
 import Entidades.LicenciaEntidad;
 import Entidades.PersonaEntidad;
 import Entidades.PlacaEntidad;
@@ -11,6 +12,7 @@ import Entidades.TramiteEntidad;
 import Entidades.VehiculoEntidad;
 import Entidades.VehiculoTieneCliente;
 import DAOS.LicenciaDAO;
+import DAOS.PersonaDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,6 +36,15 @@ public class NewMain {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
+//        Calendar fechaNacimineto = Calendar.getInstance();
+//        fechaNacimineto.set(2004, 3, 9);
+//        PersonaEntidad persona = new PersonaEntidad(fechaNacimineto, "QJSL309432", "6442621169", "Amos Heli", "Olguin", "Quiroz");
+//        em.persist(persona);
+        //AGREGAR VEHICULO A PERSONA EXIXSTENTE
+//        PersonaEntidad persona = em.find(PersonaEntidad.class, 1L);
+//        IPersonaDAO personaDAO = new PersonaDAO();
+//        personaDAO.agregarVehiculo(new VehiculoEntidad("Azul", "Eclipse GSX", "Mitsubishi", "1998", 10298212), persona);
+        
 //PLACA PERSISTIR CON PERSONA Y CARRO        
 //        VehiculoEntidad carro = em.find(VehiculoEntidad.class, 1L);
 //        PlacaEntidad placa = new PlacaEntidad("AAA333", carro);
