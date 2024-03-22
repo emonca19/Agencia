@@ -9,16 +9,18 @@ import DAOS.PersonaDAO;
 import DTO.PersonaGeneradaDTO;
 import DTO.PersonaNuevaDTO;
 import Entidades.PersonaEntidad;
+import java.util.Calendar;
 import java.util.List;
 import modificadores.Convertidor;
 
 /**
  *
- * @author PC
+ * @author Amos Heli Olguin Quiroz
  */
 public class PersonaConsulta {
     
     private final IPersonaDAO personaDAO;
+    
     
     public PersonaConsulta(){
         
@@ -33,7 +35,6 @@ public class PersonaConsulta {
     public List<PersonaEntidad> listaPersonas(){
         
         List<PersonaEntidad> listaPersonas = personaDAO.listaPersonas();
-        
         return listaPersonas;
         
     }
@@ -46,7 +47,6 @@ public class PersonaConsulta {
     public List<PersonaEntidad> listaPersonasNombre(String nombres){
         
         List<PersonaEntidad> listaPersonasNombre = personaDAO.buscarPorNombre(nombres);
-        
         return listaPersonasNombre;
         
     }
@@ -59,9 +59,7 @@ public class PersonaConsulta {
     public PersonaGeneradaDTO personaPorID(Long id){
         
         PersonaEntidad personaEntidad = personaDAO.buscarPorId(id);
-
         Convertidor convertidor = new Convertidor();
-
         PersonaGeneradaDTO personaGeneradaDTO = convertidor.entityToDTO(personaEntidad, new PersonaGeneradaDTO());
         return personaGeneradaDTO;
        
@@ -79,6 +77,23 @@ public class PersonaConsulta {
         personaEntidad = personaDAO.agregarPersona(personaEntidad);
         PersonaGeneradaDTO personaGeneradaDTO = convertidor.entityToDTO(personaEntidad, new PersonaGeneradaDTO());
         return personaGeneradaDTO;
+        
+    }
+    
+    /**
+     * Metodo que agrega 20 personas a la base de datos de manera masiva y para
+     * ejemplos
+     */
+    public void agregarMasivoPersonas(){
+        
+        Calendar fechaNacimiento = Calendar.getInstance();
+        fechaNacimiento.set(2004, 3, 1);
+        for(int i = 0; i < 20; i ++){
+            fechaNacimiento.add(Calendar.DAY_OF_MONTH, i);
+            PersonaNuevaDTO personaNueva = new PersonaNuevaDTO(fechaNacimiento, "ABD02" + i, "64426211" + i, "Nombre numero " + i, "Apellido paterno " + i, "Apellido materno " + i);
+            agregarPersona(personaNueva);
+            
+        }
         
     }
     
