@@ -5,12 +5,12 @@ import java.util.Calendar;
 public class PersonaGeneradaDTO {
     
     private Long idPersona;
+    private Calendar fechaNacimiento;
     private String rfc;
-    private String nombre;
+    private String telefono;
+    private String nombres;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    private Calendar fechaNacimiento;
-    private String telefono;
 
     public PersonaGeneradaDTO() {
     }
@@ -19,7 +19,7 @@ public class PersonaGeneradaDTO {
         
         this.idPersona = idPersona;
         this.rfc = rfc;
-        this.nombre = nombre;
+        this.nombres = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.fechaNacimiento = fechaNacimiento;
@@ -44,11 +44,11 @@ public class PersonaGeneradaDTO {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombres;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombres = nombre;
     }
 
     public String getApellidoPaterno() {
@@ -89,7 +89,7 @@ public class PersonaGeneradaDTO {
         sb.append("PersonaGeneradaDTO{");
         sb.append("idPersona=").append(idPersona);
         sb.append(", rfc=").append(rfc);
-        sb.append(", nombre=").append(nombre);
+        sb.append(", nombre=").append(nombres);
         sb.append(", apellidoPaterno=").append(apellidoPaterno);
         sb.append(", apellidoMaterno=").append(apellidoMaterno);
         sb.append(", fechaNacimiento=").append(fechaNacimiento);
