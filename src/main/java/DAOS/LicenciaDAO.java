@@ -1,9 +1,8 @@
-package Persistencia;
+package DAOS;
 
 import Entidades.LicenciaEntidad;
 import Entidades.PersonaEntidad;
-import Interfaces.IConexionBD;
-import Interfaces.ILicencia;
+import DAOS.IConexionBD;
 import excepciones.PersistenciaException;
 import java.sql.SQLException;
 import java.util.Calendar;
@@ -15,8 +14,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
+import DAOS.ILicenciaDAO;
 
-public class LicenciaDAO extends PersistenciaException implements ILicencia {
+public class LicenciaDAO extends PersistenciaException implements ILicenciaDAO {
 
     private final IConexionBD conexionBD = new ConexionBD();
     private EntityManager entityManager;

@@ -2,26 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Persistencia;
+package DAOS;
 
-import Interfaces.IConexionBD;
-import Interfaces.IPersistir;
+import DAOS.IConexionBD;
 import excepciones.PersistenciaException;
 import java.awt.BorderLayout;
 import java.sql.SQLException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import DAOS.IPersistirDAO;
 
 /**
  *
  * @author PC
  */
-public class Persistir implements IPersistir{
+public class PersistirDAO implements IPersistirDAO{
     
     private final IConexionBD conexionBD;
     private final EntityManager entityManager;
     
-    public Persistir() throws SQLException{
+    public PersistirDAO() throws SQLException{
         
         conexionBD = new ConexionBD();
         entityManager = conexionBD.crearConexion();

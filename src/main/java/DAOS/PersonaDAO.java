@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Persistencia;
+package DAOS;
 
 import DTO.PersonaNuevaDTO;
 import Entidades.PersonaEntidad;
-import Interfaces.IConexionBD;
-import Interfaces.IPersona;
+import DAOS.IConexionBD;
 import excepciones.PersistenciaException;
 import java.sql.SQLException;
 import java.util.List;
@@ -16,12 +15,13 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import DAOS.IPersonaDAO;
 
 /**
  *
  * @author PC
  */
-public class PersonaDAO implements IPersona {
+public class PersonaDAO implements IPersonaDAO {
 
     private final IConexionBD conexionBD = new ConexionBD();
     private EntityManager entityManager;

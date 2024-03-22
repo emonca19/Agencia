@@ -1,10 +1,10 @@
-package Persistencia;
+package DAOS;
 
 import DTO.PersonaGeneradaDTO;
 import DTO.PersonaNuevaDTO;
 import Entidades.LicenciaEntidad;
 import Entidades.PlacaEntidad;
-import Interfaces.IConsultas;
+import DAOS.IConsultas;
 import java.util.List;
 
 public class ConsultaDAO implements IConsultas{

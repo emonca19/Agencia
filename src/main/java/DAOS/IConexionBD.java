@@ -2,12 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package Interfaces;
+package DAOS;
+
+import java.sql.SQLException;
+import javax.persistence.EntityManager;
 
 /**
  *
- * @author elimo
+ * @author PC
  */
-public interface IReporte {
+public interface IConexionBD {
+ 
+    public EntityManager crearConexion() throws SQLException;
     
 }

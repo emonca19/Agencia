@@ -1,11 +1,10 @@
-package Persistencia;
+package DAOS;
 
 import Entidades.LicenciaEntidad;
 import Entidades.PersonaEntidad;
 import Entidades.PlacaEntidad;
 import Entidades.VehiculoEntidad;
-import Interfaces.IConexionBD;
-import Interfaces.IPlaca;
+import DAOS.IConexionBD;
 import excepciones.PersistenciaException;
 import java.sql.SQLException;
 import java.util.List;
@@ -15,8 +14,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
+import DAOS.IPlacaDAO;
 
-public class PlacaDAO implements IPlaca {
+public class PlacaDAO implements IPlacaDAO {
 
     private EntityManager em;
     private IConexionBD conexion;

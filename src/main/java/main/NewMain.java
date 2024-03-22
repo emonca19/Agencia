@@ -13,7 +13,7 @@ import Entidades.TramiteEntidad;
 import Entidades.VehiculoEntidad;
 import Entidades.VehiculoTieneCliente;
 import modificadores.Convertidor;
-import Persistencia.LicenciaDAO;
+import DAOS.LicenciaDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
