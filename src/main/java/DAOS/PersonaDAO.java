@@ -36,6 +36,12 @@ public class PersonaDAO implements IPersonaDAO {
         }
     }
 
+    /**
+     * Metodo que agrega una persona a la base de datos
+     * @param personaEntidad
+     * @return la entidad persistida
+     * @throws PersistenciaException 
+     */
     @Override
     public PersonaEntidad agregarPersona(PersonaEntidad personaEntidad) throws PersistenciaException{
 
@@ -54,6 +60,11 @@ public class PersonaDAO implements IPersonaDAO {
 
     }
 
+    /**
+     * Metodo que regresa la entidad que se encuentre mediante el id
+     * @param id
+     * @return la entidad encontrada, null en caso contrario
+     */
     @Override
     public PersonaEntidad buscarPorId(Long id) {
         try {
@@ -73,6 +84,12 @@ public class PersonaDAO implements IPersonaDAO {
 
     }
 
+    /**
+     * Metodo que regresa la lista de las personas que coincidan con el 
+     * nombre dado como parametro
+     * @param nombre
+     * @return la lilsta de las personas que coincidan con el nombre
+     */
     @Override
     public List<PersonaEntidad> buscarPorNombre(String nombre) {
     
@@ -87,6 +104,10 @@ public class PersonaDAO implements IPersonaDAO {
     
     }
 
+    /**
+     * Metodo que regresa la lista de todas las personas en la base de datos
+     * @return llista de personas en la base de datos
+     */
     @Override
     public List<PersonaEntidad> listaPersonas() {
     
