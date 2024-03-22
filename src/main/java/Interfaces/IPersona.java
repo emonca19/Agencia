@@ -6,6 +6,7 @@ package Interfaces;
 
 import DTO.PersonaNuevaDTO;
 import Entidades.PersonaEntidad;
+import java.util.List;
 
 /**
  *
@@ -17,5 +18,8 @@ public interface IPersona {
     
     public PersonaEntidad buscarPorId(Long id);
     
+    public List<PersonaEntidad> buscarPorNombre(String nombre);
+    
+    public List<PersonaEntidad> listaPersonas();
     
 }
