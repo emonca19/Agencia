@@ -37,29 +37,77 @@ public class NewMain {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("agenciatransito");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
+
+//PLACA PERSISTIR CON PERSONA Y CARRO        
+//        VehiculoEntidad carro = em.find(VehiculoEntidad.class, 1L);
+//        PlacaEntidad placa = new PlacaEntidad("AAA333", carro);
+//        placa.setCosto(2000);
+//        placa.setFechaTramite(Calendar.getInstance());
+//        PersonaEntidad persona = em.find(PersonaEntidad.class, 1L);
+//        placa.setPersona(persona);
+//        List<PlacaEntidad> listaPlacaas = new ArrayList<>();
+//        listaPlacaas.add(placa);
+//        carro.setPlacas(listaPlacaas);
+//        
+//        em.persist(persona);
         
-        IConvertidor convertidor = new EntityToDTO();
+        
+//VEHICULO PERSISTIR CON PERSONA
+//        VehiculoEntidad carro = new VehiculoEntidad("Azul", "Eclipse", "Mitsubishi", "1998", 10);
+//        
+//        PersonaEntidad persona = em.find(PersonaEntidad.class, 1L);
+//        carro.setPersona(persona);
+//        List<VehiculoEntidad> listaVehicolos = new ArrayList<>();
+//        listaVehicolos.add(carro);
+//        persona.setVehiculoCliente(listaVehicolos);
+//        carro.setPersona(persona);
+//        
+//        em.persist(persona);
+        
+        
+//LICENCIA PERISSTIR CON PERSONA        
+//        LicenciaEntidad licencia = new LicenciaEntidad(2, 90);
+//        licencia.setCosto(200);
+//        Calendar fecha = Calendar.getInstance();
+//        licencia.setFechaTramite(fecha);
+//        fecha.set(2004, 3, 9);
+//        PersonaEntidad persona = new PersonaEntidad(fecha, "abc", "6442621169", "AMOS", "OLGUIN", "QUIROZ");
+//        licencia.setPersona(persona);
+//        persona.setLicencia(licencia);
+//        
+//        em.persist(persona);
+        
+        
+//PERSISTIR CAMBIOS DE ENTITY Y DTO
+//        IConvertidor convertidor = new EntityToDTO();
 //        Calendar fechaNacimiento = Calendar.getInstance();
 //        fechaNacimiento.set(2004, 3, 9);
 //        PersonaNuevaDTO personaNDTO = new PersonaNuevaDTO(fechaNacimiento, "SJSHKASDUH", "64426211690", "AMOS", "OLGUIN", "QUIROZ");
 //        PersonaEntidad personaEntidad = new PersonaEntidad();
 //        personaEntidad = convertidor.DTOToEntidad(personaNDTO, personaEntidad);
         
-        Long id = 1L;
-        PersonaEntidad personaEntidad = em.find(PersonaEntidad.class, id);
-        PersonaGeneradaDTO personaGDTO = new PersonaGeneradaDTO();
-        System.out.println(personaEntidad.getNombres());
-        personaGDTO = convertidor.entityToDTO(personaEntidad, personaGDTO);
-
-        if (personaGDTO == null) {
-            
-            System.out.println("No se pudo agregar");
-            
-        }else{
-            
-            System.out.println(personaGDTO.getNombre());
-            
-        }
+//        Long id = 1L;
+//        PersonaEntidad personaEntidad = em.find(PersonaEntidad.class, id);
+//        PersonaGeneradaDTO personaGDTO = new PersonaGeneradaDTO();
+//        System.out.println(personaEntidad.getNombres());
+//        personaGDTO = convertidor.entityToDTO(personaEntidad, personaGDTO);
+//        
+//        
+//        if (personaGDTO == null) {
+//            
+//            System.out.println("No se pudo agregar");
+//            
+//        }else{
+//            
+//            System.out.println(personaGDTO.getApellidoPaterno());
+//            System.out.println(personaGDTO.getApellidoMaterno());
+//            System.out.println(personaGDTO.getFechaNacimiento());
+//            System.out.println(personaGDTO.getIdPersona());
+//            System.out.println(personaGDTO.getRfc());
+//            System.out.println(personaGDTO.getTelefono());
+//            System.out.println(personaGDTO.getNombre());
+//            
+//        }
         
         em.getTransaction().commit();
         em.close();

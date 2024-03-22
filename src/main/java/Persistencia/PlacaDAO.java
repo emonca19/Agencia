@@ -68,7 +68,7 @@ try {
 
             Join<LicenciaEntidad, PersonaEntidad> joinPersona = root.join("idVehiculo");
 
-            query.select(root).where(criteriaBuilder.equal(joinPersona.get("idVehiculo"), vehiculo.getId()));
+            query.select(root).where(criteriaBuilder.equal(joinPersona.get("idVehiculo"), vehiculo.getIdVehiculo()));
 
             return em.createQuery(query).getResultList();
         } catch (PersistenceException ex) {

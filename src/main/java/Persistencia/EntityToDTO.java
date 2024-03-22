@@ -59,18 +59,18 @@ public class EntityToDTO implements IConvertidor{
             
             try {
                 // Obtener el nombre del campo
-                String nombreCampoDto = campoEntity.getName();
+                String nombreCampoEntity = campoEntity.getName();
 
                 // Obtener el valor del campo en DTO
                 campoEntity.setAccessible(true); // Hacer accesible el campo incluso si es privado
-                Object valorCampoDto = campoEntity.get(entity);
+                Object valorCampoEntity = campoEntity.get(entity);
 
                 // Obtener el campo correspondiente en la entidad
-                Field campoDTO = clasesDTO.getDeclaredField(nombreCampoDto);
+                Field campoDTO = clasesDTO.getDeclaredField(nombreCampoEntity);
                 campoDTO.setAccessible(true); // Hacer accesible el campo incluso si es privado
 
                 // Establecer el valor del campo en la entidad
-                campoDTO.set(dto, valorCampoDto);
+                campoDTO.set(dto, valorCampoEntity);
                 
             } catch (NoSuchFieldException | IllegalAccessException e) {
                 e.printStackTrace(); // Manejar las excepciones según sea necesario
